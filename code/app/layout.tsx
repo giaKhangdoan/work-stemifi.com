@@ -1,5 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
+import BackToTopButton from "@/components/back-to-top"
 import { Geist, Geist_Mono } from "next/font/google"
 import "./globals.css"
 
@@ -14,9 +15,14 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "Workshops Landing Page",
+  title: "Workshop STEMIFI",
   description: "Weekly workshops with beautiful design and 3D effects",
   generator: "v0.app",
+  icons: {
+    icon: "/stemifi-logo.png",
+    shortcut: "/stemifi-logo.png",
+    apple: "/stemifi-logo.png",
+  },
 }
 
 export default function RootLayout({
@@ -26,7 +32,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geist.variable} ${geistMono.variable} font-sans antialiased`}>{children}</body>
+      <body className={`${geist.variable} ${geistMono.variable} font-sans antialiased`}>
+        {children}
+        <BackToTopButton />
+      </body>
     </html>
   )
 }

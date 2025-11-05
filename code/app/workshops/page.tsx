@@ -134,11 +134,13 @@ export default function WorkshopsPage() {
           </Link>
 
           <div className="flex items-center gap-3">
-            <img
-              src="/stemifi-logo.png"
-              alt="STEMIFI MAKERS"
-              className="h-16 w-auto object-contain md:h-20"
-            />
+            <Link href="/" className="transition-transform hover:scale-105" prefetch>
+              <img
+                src="/stemifi-logo.png"
+                alt="STEMIFI MAKERS"
+                className="h-16 w-auto object-contain md:h-20"
+              />
+            </Link>
           </div>
         </div>
       </header>
