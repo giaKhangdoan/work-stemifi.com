@@ -124,19 +124,19 @@ export function AnimatedStats() {
       >
         <div className="rounded-lg border border-foreground/10 bg-foreground/5 p-4">
           <p className="font-mono text-xs text-foreground/60 uppercase tracking-wide">Total</p>
-          <p className="mt-2 font-sans text-2xl font-light text-foreground">{stats.totalWorkshops}</p>
+          <p className="mt-2 font-sans text-2xl font-medium tracking-tight text-foreground">{stats.totalWorkshops}</p>
           <p className="font-mono text-xs text-foreground/40 mt-1">workshops</p>
         </div>
 
         <div className="rounded-lg border border-foreground/10 bg-foreground/5 p-4">
           <p className="font-mono text-xs text-foreground/60 uppercase tracking-wide">Enrolled</p>
-          <p className="mt-2 font-sans text-2xl font-light text-foreground">{stats.totalEnrolled}</p>
+          <p className="mt-2 font-sans text-2xl font-medium tracking-tight text-foreground">{stats.totalEnrolled}</p>
           <p className="font-mono text-xs text-foreground/40 mt-1">students</p>
         </div>
 
         <div className="rounded-lg border border-foreground/10 bg-foreground/5 p-4">
           <p className="font-mono text-xs text-foreground/60 uppercase tracking-wide">Occupancy</p>
-          <p className="mt-2 font-sans text-2xl font-light text-foreground">{stats.occupancyRate}%</p>
+          <p className="mt-2 font-sans text-2xl font-medium tracking-tight text-foreground">{stats.occupancyRate}%</p>
           <p className="font-mono text-xs text-foreground/40 mt-1">capacity</p>
         </div>
       </div>

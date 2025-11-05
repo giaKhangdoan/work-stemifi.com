@@ -150,6 +150,89 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/20" />
       </div>
 
+      {/* Background Images Layer - Floating Micro:bit and Robot Images */}
+      <div className="fixed inset-0 z-[1] pointer-events-none overflow-hidden">
+        {/* Image 1 - Top Left */}
+        <div className="absolute -top-20 -left-20 w-80 h-80 md:w-[400px] md:h-[400px] opacity-[0.28] animate-bg-float" style={{ animationDelay: '0s', animationDuration: '25s', zIndex: 2 }}>
+          <img 
+            src="/microbit-1.png" 
+            alt="" 
+            className="w-full h-full object-contain"
+            style={{ filter: 'blur(1.5px)' }}
+          />
+        </div>
+
+        {/* Image 2 - Top Right */}
+        <div className="absolute top-10 right-10 w-64 h-64 md:w-96 md:h-96 opacity-[0.25] animate-bg-float" style={{ animationDelay: '4s', animationDuration: '30s', zIndex: 2 }}>
+          <img 
+            src="/microbit-2.png" 
+            alt="" 
+            className="w-full h-full object-contain"
+            style={{ filter: 'blur(2px)' }}
+          />
+        </div>
+
+        {/* Image 3 - Middle Left */}
+        <div className="absolute top-1/3 -left-16 w-72 h-72 md:w-[360px] md:h-[360px] opacity-[0.26] animate-bg-float" style={{ animationDelay: '8s', animationDuration: '28s', zIndex: 2 }}>
+          <img 
+            src="/microbit-3.png" 
+            alt="" 
+            className="w-full h-full object-contain"
+            style={{ filter: 'blur(1.8px)' }}
+          />
+        </div>
+
+        {/* Image 4 - Bottom Right */}
+        <div className="absolute bottom-20 -right-20 w-68 h-68 md:w-88 md:h-88 opacity-[0.24] animate-bg-float" style={{ animationDelay: '12s', animationDuration: '32s', zIndex: 2 }}>
+          <img 
+            src="/microbit-4.png" 
+            alt="" 
+            className="w-full h-full object-contain"
+            style={{ filter: 'blur(2px)' }}
+          />
+        </div>
+
+        {/* Image 5 - Bottom Left */}
+        <div className="absolute bottom-10 left-10 w-76 h-76 md:w-[380px] md:h-[380px] opacity-[0.27] animate-bg-float" style={{ animationDelay: '16s', animationDuration: '26s', zIndex: 2 }}>
+          <img 
+            src="/microbit-5.png" 
+            alt="" 
+            className="w-full h-full object-contain"
+            style={{ filter: 'blur(1.5px)' }}
+          />
+        </div>
+
+        {/* Image 6 - Center Right (Banner style) */}
+        <div className="absolute top-1/2 right-1/4 w-88 h-88 md:w-[420px] md:h-[420px] opacity-[0.22] animate-bg-float" style={{ animationDelay: '20s', animationDuration: '35s', zIndex: 2 }}>
+          <img 
+            src="/microbit-banner.png" 
+            alt="" 
+            className="w-full h-full object-contain"
+            style={{ filter: 'blur(2.5px)' }}
+          />
+        </div>
+
+        {/* Image 7 - Scratch Rectangle Drawing - Full Screen, Diagonal, Behind */}
+        <div className="absolute -top-40 -right-40 w-screen h-screen md:w-[150vw] md:h-[150vh] opacity-[0.25] animate-bg-float" style={{ animationDelay: '18s', animationDuration: '27s', transform: 'rotate(-15deg)', zIndex: 0 }}>
+          <img 
+            src="/scratch-rectangle.png" 
+            alt="" 
+            className="w-full h-full object-contain"
+            style={{ filter: 'blur(2px)' }}
+          />
+        </div>
+
+        {/* Image 8 - Scratch N Letter - Full Screen, Diagonal, Behind */}
+        <div className="absolute -bottom-40 -left-40 w-screen h-screen md:w-[140vw] md:h-[140vh] opacity-[0.22] animate-bg-float" style={{ animationDelay: '22s', animationDuration: '29s', transform: 'rotate(20deg)', zIndex: 0 }}>
+          <img 
+            src="/scratch-n.png" 
+            alt="" 
+            className="w-full h-full object-contain"
+            style={{ filter: 'blur(2.2px)' }}
+          />
+        </div>
+      </div>
+
       {/* Header Navigation */}
       <nav
         className={`fixed left-0 right-0 top-0 z-50 flex flex-col items-center gap-3 px-6 py-4 transition-opacity duration-700 md:px-12 ${
@@ -225,75 +308,122 @@ export default function Home() {
         {/* Hero Section - Workshop Details */}
         <section
           id="hero"
-          className="flex min-h-screen w-full items-center px-6 pt-20 pb-12 md:px-12 md:pt-24 md:pb-16"
+          className="flex min-h-screen w-full items-center px-4 pt-20 pb-12 md:px-8 md:pt-24 md:pb-16"
         >
-          <div className="mx-auto w-full max-w-7xl">
-            <div className="grid gap-6 md:grid-cols-2 md:gap-12 lg:gap-16">
-              {/* Left Column - Workshop Details */}
-              <div className="flex flex-col justify-center">
-                <div className="mb-3">
-                  <h1 className="mb-3 font-sans text-4xl font-semibold uppercase tracking-tight text-foreground md:text-5xl lg:text-6xl leading-tight" style={{ paddingTop: '0.2em', paddingBottom: '0.2em' }}>
-                    {currentWorkshop?.title || "WORKSHOP"}
-            </h1>
-                  <p className="mb-6 text-base leading-relaxed text-foreground/80 md:text-lg">
-                    {currentWorkshop?.description || "Chương trình học tập trải nghiệm – thực hành trực tiếp"}
-                  </p>
-                </div>
+          <div className="mx-auto w-full max-w-6xl">
+            {/* Glass Card Container */}
+            <div className="relative overflow-hidden rounded-3xl border border-white/20 bg-white/10 backdrop-blur-xl shadow-[0_20px_60px_rgba(0,0,0,0.3)] p-6 md:p-10 lg:p-12">
+              {/* Gradient Glow Background */}
+              <div className="absolute inset-0 bg-gradient-to-br from-[#56C4C3]/20 via-transparent to-[#375AA9]/20 opacity-50 blur-3xl" />
+              
+              <div className="relative z-10 grid gap-8 md:grid-cols-12 md:gap-8">
+                {/* Left Column - Content */}
+                <div className="md:col-span-7 flex flex-col justify-center">
+                  {/* Logo/Brand */}
+                  <div className="mb-4 flex items-center gap-3">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-[#375AA9] to-[#56C4C3]">
+                      <span className="font-mono text-lg font-bold text-white">S</span>
+                    </div>
+                    <span className="font-sans text-sm font-semibold tracking-tight text-foreground/90">STEMIFI MAKERS</span>
+                  </div>
 
-                <div className="space-y-3 mb-6">
-                  <div className="flex items-start gap-3">
-                    <Clock className="h-5 w-5 text-foreground/60 mt-0.5 flex-shrink-0" />
-                    <div>
-                      <p className="mb-1 font-sans text-[11px] font-semibold uppercase tracking-widest text-foreground/60">Lịch</p>
-                      <p className="text-foreground">
+                  {/* Title with Gradient Glow */}
+                  <div className="mb-4 relative">
+                    <h1 className="mb-2 font-sans text-3xl font-bold tracking-tight text-foreground md:text-4xl lg:text-5xl">
+                      <span className="text-[#375AA9]">STEMIFI</span>
+                      <br />
+                      <span className="relative inline-block">
+                        <span className="absolute inset-0 bg-gradient-to-r from-[#56C4C3] via-[#56C4C3] to-white bg-clip-text text-transparent blur-sm opacity-75">
+                          MAKERS WORKSHOP
+                        </span>
+                        <span className="relative bg-gradient-to-r from-[#56C4C3] to-white bg-clip-text text-transparent">
+                          MAKERS WORKSHOP
+                        </span>
+                      </span>
+                    </h1>
+                    <p className="mt-3 font-sans text-sm leading-relaxed tracking-tight text-foreground/80 md:text-base">
+                      {currentWorkshop?.description || "Chương trình học tập trải nghiệm – thực hành trực tiếp"}
+                    </p>
+                  </div>
+
+                  {/* Info Cards */}
+                  <div className="mb-6 grid gap-3 sm:grid-cols-2">
+                    <div className="rounded-xl border border-white/20 bg-white/5 backdrop-blur-sm p-4">
+                      <div className="mb-2 flex items-center gap-2">
+                        <Clock className="h-4 w-4 text-[#56C4C3]" />
+                        <p className="font-mono text-xs font-semibold uppercase tracking-widest text-foreground/60">Lịch</p>
+                      </div>
+                      <p className="font-sans text-sm font-medium tracking-tight text-foreground">
                         {saturdayDate || "Thứ Bảy hàng tuần"}
                       </p>
                     </div>
-                  </div>
 
-                  <div className="flex items-start gap-3">
-                    <Clock className="h-5 w-5 text-foreground/60 mt-0.5 flex-shrink-0" />
-                    <div>
-                      <p className="mb-1 font-sans text-[11px] font-semibold uppercase tracking-widest text-foreground/60">Thời gian</p>
-                      <p className="text-foreground font-bold text-yellow-400">
-                        {currentWorkshop?.time || "8:00 AM - 11:15 AM"}
+                    <div className="rounded-xl border border-white/20 bg-white/5 backdrop-blur-sm p-4">
+                      <div className="mb-2 flex items-center gap-2">
+                        <Clock className="h-4 w-4 text-[#56C4C3]" />
+                        <p className="font-mono text-xs font-semibold uppercase tracking-widest text-foreground/60">Thời gian</p>
+                      </div>
+                      <p className="font-sans text-sm font-bold tracking-tight text-yellow-400">
+                        {currentWorkshop?.time || "8:00 - 11:15 AM"}
+                      </p>
+                    </div>
+
+                    <div className="rounded-xl border border-white/20 bg-white/5 backdrop-blur-sm p-4 sm:col-span-2">
+                      <div className="mb-2 flex items-center gap-2">
+                        <MapPin className="h-4 w-4 text-[#56C4C3]" />
+                        <p className="font-mono text-xs font-semibold uppercase tracking-widest text-foreground/60">Địa điểm</p>
+                      </div>
+                      <p className="font-sans text-sm font-medium tracking-tight text-foreground">
+                        {currentWorkshop?.location || "STEMIFI Lab"}
                       </p>
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-3">
-                    <MapPin className="h-5 w-5 text-foreground/60 mt-0.5 flex-shrink-0" />
-                    <div>
-                      <p className="mb-1 font-sans text-[11px] font-semibold uppercase tracking-widest text-foreground/60">Địa điểm</p>
-                      <p className="text-foreground">
-                        {currentWorkshop?.location || "STEMIFI Lab (hoặc cập nhật theo tuần)"}
-                      </p>
+                  {/* CTA Buttons */}
+                  <div className="flex flex-col gap-3 sm:flex-row">
+                    <MagneticButton size="lg" variant="primary" onClick={() => scrollToSection("register")}>
+                      Đăng ký ngay
+                    </MagneticButton>
+                    <MagneticButton size="lg" variant="secondary" onClick={() => scrollToSection("content")}>
+                      Xem nội dung
+                    </MagneticButton>
+                  </div>
+                </div>
+
+                {/* Right Column - Image & QR */}
+                <div className="md:col-span-5 flex flex-col items-center justify-center gap-6">
+                  {/* Micro:bit Image */}
+                  {currentWorkshop?.banner && (
+                    <div className="relative w-full max-w-xs overflow-hidden rounded-2xl border border-white/20 bg-white/5 p-4 shadow-lg">
+                      <img
+                        src={currentWorkshop.banner}
+                        alt={currentWorkshop.title}
+                        className="mx-auto h-auto w-full object-contain"
+                        style={{ maxHeight: "300px" }}
+                      />
+                    </div>
+                  )}
+
+                  {/* QR Code & Registration */}
+                  <div className="w-full rounded-2xl border border-white/20 bg-white/10 backdrop-blur-sm p-6 text-center">
+                    <p className="mb-3 font-mono text-xs font-semibold uppercase tracking-widest text-foreground/70">
+                      QR Đăng ký
+                    </p>
+                    <div className="mb-3 flex items-center justify-center">
+                      <div className="flex h-32 w-32 items-center justify-center rounded-lg border-2 border-dashed border-white/30 bg-white/5">
+                        <QrCode className="h-16 w-16 text-foreground/40" />
+                      </div>
+                    </div>
+                    <p className="mb-4 font-sans text-xs tracking-tight text-foreground/80">
+                      Quét QR để mở form đăng ký
+                    </p>
+                    <div className="space-y-1 text-left">
+                      <p className="font-mono text-xs text-foreground/60">{contactInfo.hotlineDisplay}</p>
+                      <p className="font-mono text-xs text-foreground/60">{contactInfo.email}</p>
+                      <p className="font-mono text-xs text-foreground/60">www.stemifi.com</p>
                     </div>
                   </div>
                 </div>
-
-                <div className="flex flex-col gap-4 sm:flex-row">
-                  <MagneticButton size="lg" variant="primary" onClick={() => scrollToSection("register")}>
-                    Đăng ký ngay
-              </MagneticButton>
-                  <MagneticButton size="lg" variant="secondary" onClick={() => scrollToSection("content")}>
-                    Xem nội dung
-              </MagneticButton>
-                </div>
-              </div>
-
-              {/* Right Column - Banner instead of quick info */}
-              <div className="flex items-center justify-center">
-                {currentWorkshop?.banner && (
-                  <div className="relative w-full max-w-xl md:max-w-2xl overflow-hidden rounded-3xl border border-foreground/20 bg-foreground/5 p-3 shadow-[0_20px_60px_rgba(0,0,0,0.4),0_0_30px_rgba(86,196,195,0.2)] animate-wander" style={{ borderRadius: "1.25rem" }}>
-                    <img
-                      src={currentWorkshop.banner}
-                      alt={currentWorkshop.title}
-                      className="mx-auto h-auto w-full object-contain"
-                      style={{ maxHeight: "520px", borderRadius: "1rem" }}
-                    />
-                  </div>
-                )}
               </div>
             </div>
           </div>

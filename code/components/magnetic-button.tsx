@@ -69,7 +69,7 @@ export function MagneticButton({
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       className={`
-        relative overflow-hidden rounded-full font-medium
+        relative overflow-hidden rounded-full font-sans font-medium tracking-tight
         transition-all duration-300 ease-out will-change-transform
         ${variants[variant]}
         ${sizes[size]}

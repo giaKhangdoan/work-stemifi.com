@@ -16,7 +16,7 @@ export function ServicesSection() {
             isVisible ? "translate-y-0 opacity-100" : "-translate-y-12 opacity-0"
           }`}
         >
-          <h2 className="mb-2 font-sans text-5xl font-light tracking-tight text-foreground md:text-6xl lg:text-7xl">
+          <h2 className="mb-2 font-sans text-5xl font-medium tracking-tight text-foreground md:text-6xl lg:text-7xl">
             Capabilities
           </h2>
           <p className="font-mono text-sm text-foreground/60 md:text-base">/ What we bring to the table</p>
@@ -91,8 +91,8 @@ function ServiceCard({
         <div className="h-px w-8 bg-foreground/30 transition-all duration-300 group-hover:w-12 group-hover:bg-foreground/50" />
         <span className="font-mono text-xs text-foreground/60">0{index + 1}</span>
       </div>
-      <h3 className="mb-2 font-sans text-2xl font-light text-foreground md:text-3xl">{service.title}</h3>
-      <p className="max-w-sm text-sm leading-relaxed text-foreground/80 md:text-base">{service.description}</p>
+      <h3 className="mb-2 font-sans text-2xl font-medium tracking-tight text-foreground md:text-3xl">{service.title}</h3>
+      <p className="max-w-sm font-sans text-sm leading-relaxed tracking-tight text-foreground/80 md:text-base">{service.description}</p>
     </div>
   )
 }

@@ -20,7 +20,7 @@ export function AboutSection({ scrollToSection }: { scrollToSection?: (index: nu
                 isVisible ? "translate-y-0 opacity-100" : "-translate-y-12 opacity-0"
               }`}
             >
-              <h2 className="mb-3 font-sans text-3xl font-light leading-[1.1] tracking-tight text-foreground md:mb-4 md:text-6xl lg:text-7xl">
+              <h2 className="mb-3 font-sans text-3xl font-medium leading-[1.1] tracking-tight text-foreground md:mb-4 md:text-6xl lg:text-7xl">
                 Building the
                 <br />
                 future of
@@ -35,11 +35,11 @@ export function AboutSection({ scrollToSection }: { scrollToSection?: (index: nu
               }`}
               style={{ transitionDelay: "200ms" }}
             >
-              <p className="max-w-md text-sm leading-relaxed text-foreground/90 md:text-lg">
+              <p className="max-w-md font-sans text-sm leading-relaxed tracking-tight text-foreground/90 md:text-lg">
                 We're a collective of designers, developers, and creative technologists obsessed with crafting
                 exceptional digital experiences.
               </p>
-              <p className="max-w-md text-sm leading-relaxed text-foreground/90 md:text-lg">
+              <p className="max-w-md font-sans text-sm leading-relaxed tracking-tight text-foreground/90 md:text-lg">
                 Every project is an opportunity to explore new possibilities and push creative boundaries.
               </p>
             </div>
@@ -69,10 +69,10 @@ export function AboutSection({ scrollToSection }: { scrollToSection?: (index: nu
                     maxWidth: i % 2 === 0 ? "100%" : "85%",
                   }}
                 >
-                  <div className="text-3xl font-light text-foreground md:text-6xl lg:text-7xl">{stat.value}</div>
+                  <div className="font-sans text-3xl font-medium tracking-tight text-foreground md:text-6xl lg:text-7xl">{stat.value}</div>
                   <div>
-                    <div className="font-sans text-base font-light text-foreground md:text-xl">{stat.label}</div>
-                    <div className="font-mono text-xs text-foreground/60">{stat.sublabel}</div>
+                    <div className="font-sans text-base font-medium tracking-tight text-foreground md:text-xl">{stat.label}</div>
+                    <div className="font-mono text-xs tracking-tight text-foreground/60">{stat.sublabel}</div>
                   </div>
                 </div>
               )

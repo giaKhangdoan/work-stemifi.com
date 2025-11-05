@@ -41,7 +41,7 @@ export function ScheduleSection() {
             isVisible ? "translate-x-0 opacity-100" : "-translate-x-12 opacity-0"
           }`}
         >
-          <h2 className="mb-2 font-sans text-5xl font-light tracking-tight text-foreground md:text-6xl lg:text-7xl">
+          <h2 className="mb-2 font-sans text-5xl font-medium tracking-tight text-foreground md:text-6xl lg:text-7xl">
             Schedule
           </h2>
           <p className="font-mono text-sm text-foreground/60 md:text-base">
@@ -63,13 +63,13 @@ export function ScheduleSection() {
               <div className="mb-4 inline-block rounded-full bg-foreground/15 px-3 py-1">
                 <span className="font-mono text-xs font-semibold text-foreground/70">Statistics</span>
               </div>
-              <h3 className="mb-6 font-sans text-2xl font-light text-foreground">Week Overview</h3>
+              <h3 className="mb-6 font-sans text-2xl font-medium tracking-tight text-foreground">Week Overview</h3>
 
               <div className="space-y-4">
                 <div className="flex items-end justify-between">
                   <div>
                     <p className="font-mono text-xs text-foreground/60 uppercase tracking-wide">Total Workshops</p>
-                    <p className="mt-1 font-sans text-3xl font-light text-foreground">{weekWorkshops.length}</p>
+                    <p className="mt-1 font-sans text-3xl font-medium tracking-tight text-foreground">{weekWorkshops.length}</p>
                   </div>
                   <Calendar className="h-6 w-6 text-foreground/40" />
                 </div>
@@ -79,7 +79,7 @@ export function ScheduleSection() {
                 <div className="flex items-end justify-between">
                   <div>
                     <p className="font-mono text-xs text-foreground/60 uppercase tracking-wide">Enrollment</p>
-                    <p className="mt-1 font-sans text-3xl font-light text-foreground">{totalEnrolled}</p>
+                    <p className="mt-1 font-sans text-3xl font-medium tracking-tight text-foreground">{totalEnrolled}</p>
                     <p className="mt-1 font-mono text-xs text-foreground/50">/ {totalCapacity} capacity</p>
                   </div>
                   <Users className="h-6 w-6 text-foreground/40" />
@@ -89,7 +89,7 @@ export function ScheduleSection() {
 
                 <div className="flex items-center justify-between rounded-lg bg-foreground/10 px-3 py-2">
                   <span className="font-mono text-sm font-semibold text-foreground">Occupancy</span>
-                  <span className="font-sans text-lg font-light text-foreground">{occupancyRate}%</span>
+                  <span className="font-sans text-lg font-medium tracking-tight text-foreground">{occupancyRate}%</span>
                 </div>
               </div>
             </div>
@@ -100,7 +100,7 @@ export function ScheduleSection() {
                 <div className="mb-3 inline-block rounded-full bg-foreground/15 px-3 py-1">
                   <span className="font-mono text-xs font-semibold text-foreground/70">Next Up</span>
                 </div>
-                <h4 className="mb-4 line-clamp-2 font-sans text-lg font-light text-foreground">{nextWorkshop.title}</h4>
+                <h4 className="mb-4 line-clamp-2 font-sans text-lg font-medium tracking-tight text-foreground">{nextWorkshop.title}</h4>
                 <div className="flex items-center gap-2 text-sm">
                   <Clock className="h-4 w-4 text-foreground/60" />
                   <span className="font-mono text-foreground/70">{nextWorkshop.time}</span>
@@ -146,7 +146,7 @@ export function ScheduleSection() {
 
                         {/* Workshop Info */}
                         <div className="flex-1 min-w-0">
-                          <h4 className="mb-1 font-sans text-base font-light text-foreground md:text-lg">
+                          <h4 className="mb-1 font-sans text-base font-medium tracking-tight text-foreground md:text-lg">
                             {workshop.title}
                           </h4>
                           <p className="mb-3 line-clamp-1 font-mono text-xs text-foreground/60">
@@ -189,8 +189,8 @@ export function ScheduleSection() {
               </div>
             ) : (
               <div className="flex flex-col items-center justify-center gap-4 rounded-lg border border-foreground/10 bg-foreground/5 py-12">
-                <p className="font-sans text-lg text-foreground/60">No workshops scheduled this week</p>
-                <p className="font-mono text-sm text-foreground/40">Check back next Monday for the upcoming schedule</p>
+                <p className="font-sans text-lg tracking-tight text-foreground/60">No workshops scheduled this week</p>
+                <p className="font-mono text-sm tracking-tight text-foreground/40">Check back next Monday for the upcoming schedule</p>
               </div>
             )}
           </div>

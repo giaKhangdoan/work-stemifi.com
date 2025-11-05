@@ -19,7 +19,7 @@ export function LiveWorkshopBanner() {
             <p className="mb-1 font-mono text-xs font-semibold uppercase tracking-wide text-emerald-400">
               Workshop Live Now
             </p>
-            <h3 className="mb-2 line-clamp-2 font-sans font-light text-foreground">{liveWorkshop.title}</h3>
+            <h3 className="mb-2 line-clamp-2 font-sans font-medium tracking-tight text-foreground">{liveWorkshop.title}</h3>
             <p className="font-mono text-xs text-foreground/60">with {liveWorkshop.instructor}</p>
           </div>
           <button className="shrink-0 rounded-lg bg-emerald-500/30 p-2 transition-all hover:bg-emerald-500/40">
@@ -37,7 +37,7 @@ export function LiveWorkshopBanner() {
           <Clock className="mt-1 h-4 w-4 shrink-0 text-blue-400" />
           <div className="flex-1 min-w-0">
             <p className="mb-1 font-mono text-xs font-semibold uppercase tracking-wide text-blue-400">Coming Up</p>
-            <h3 className="mb-1 line-clamp-2 font-sans font-light text-foreground">{nextWorkshop.title}</h3>
+            <h3 className="mb-1 line-clamp-2 font-sans font-medium tracking-tight text-foreground">{nextWorkshop.title}</h3>
             <p className="font-mono text-xs text-foreground/60">Starts in {timeUntilNext}</p>
           </div>
         </div>

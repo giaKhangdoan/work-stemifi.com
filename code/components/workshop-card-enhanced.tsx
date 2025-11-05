@@ -33,12 +33,12 @@ export function WorkshopCardEnhanced({ workshop }: { workshop: Workshop }) {
       </div>
 
       {/* Title */}
-      <h3 className="mb-2 px-6 font-sans text-2xl font-light leading-tight text-foreground md:text-3xl">
+      <h3 className="mb-2 px-6 font-sans text-2xl font-medium leading-tight tracking-tight text-foreground md:text-3xl">
         {workshop.title}
       </h3>
 
       {/* Description */}
-      <p className="mb-6 px-6 text-sm leading-relaxed text-foreground/70 line-clamp-2">{workshop.description}</p>
+      <p className="mb-6 px-6 font-sans text-sm leading-relaxed tracking-tight text-foreground/70 line-clamp-2">{workshop.description}</p>
 
       {/* Tags */}
       <div className="mb-6 flex flex-wrap gap-2 px-6">

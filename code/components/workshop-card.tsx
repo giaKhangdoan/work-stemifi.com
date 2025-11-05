@@ -26,12 +26,12 @@ export function WorkshopCard({ workshop }: { workshop: Workshop }) {
       </div>
 
       {/* Title with hover effect */}
-      <h3 className="mb-2 font-sans text-2xl font-light leading-tight text-foreground transition-transform duration-300 group-hover:scale-105 origin-left md:text-3xl">
+      <h3 className="mb-2 font-sans text-2xl font-medium leading-tight tracking-tight text-foreground transition-transform duration-300 group-hover:scale-105 origin-left md:text-3xl">
         {workshop.title}
       </h3>
 
       {/* Description */}
-      <p className="mb-6 text-sm leading-relaxed text-foreground/70 line-clamp-2">{workshop.description}</p>
+      <p className="mb-6 font-sans text-sm leading-relaxed tracking-tight text-foreground/70 line-clamp-2">{workshop.description}</p>
 
       {/* Tags */}
       <div className="mb-6 flex flex-wrap gap-2">

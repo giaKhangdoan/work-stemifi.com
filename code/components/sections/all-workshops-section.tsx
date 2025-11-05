@@ -48,7 +48,7 @@ export function AllWorkshopsSection() {
             isVisible ? "translate-x-0 opacity-100" : "-translate-x-12 opacity-0"
           }`}
         >
-          <h2 className="mb-2 font-sans text-5xl font-light tracking-tight text-foreground md:text-6xl lg:text-7xl">
+          <h2 className="mb-2 font-sans text-5xl font-medium tracking-tight text-foreground md:text-6xl lg:text-7xl">
             All Workshops
           </h2>
           <p className="font-mono text-sm text-foreground/60 md:text-base">
@@ -151,7 +151,7 @@ export function AllWorkshopsSection() {
                         <span className="font-mono font-semibold text-foreground/80">W{week}</span>
                       </div>
                       <div className="text-left">
-                        <p className="font-sans font-light text-foreground">Week {week}</p>
+                        <p className="font-sans font-medium tracking-tight text-foreground">Week {week}</p>
                         <p className="font-mono text-xs text-foreground/50">
                           {weekWorkshops.length} workshop{weekWorkshops.length !== 1 ? "s" : ""}
                         </p>
@@ -182,7 +182,7 @@ export function AllWorkshopsSection() {
                       ))
                     ) : (
                       <div className="col-span-2 flex flex-col items-center justify-center gap-2 rounded-lg border border-foreground/10 bg-foreground/5 py-8">
-                        <p className="font-sans text-foreground/60">No workshops match your filters</p>
+                        <p className="font-sans tracking-tight text-foreground/60">No workshops match your filters</p>
                       </div>
                     )}
                   </div>
@@ -195,8 +195,8 @@ export function AllWorkshopsSection() {
         {/* No Results */}
         {filteredWorkshops.length === 0 && (
           <div className="flex flex-col items-center justify-center gap-4 rounded-lg border border-foreground/10 bg-foreground/5 py-12">
-            <p className="font-sans text-lg text-foreground/60">No workshops found</p>
-            <p className="font-mono text-sm text-foreground/40">Try adjusting your search or filters</p>
+            <p className="font-sans text-lg tracking-tight text-foreground/60">No workshops found</p>
+            <p className="font-mono text-sm tracking-tight text-foreground/40">Try adjusting your search or filters</p>
           </div>
         )}
       </div>
