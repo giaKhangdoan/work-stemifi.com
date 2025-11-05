@@ -1,0 +1,154 @@
+{
+  "workshops": [
+    {
+      "id": 1,
+      "title": "LẬP TRÌNH BLOCKLY & MICRO:BIT – ỨNG DỤNG VỚI MÁY IN 3D",
+      "description": "Học sinh làm quen Blockly (MakeCode), lập trình Micro:bit điều khiển mô hình thực, hiểu quy trình thiết kế & in chi tiết 3D và trải nghiệm trọn vẹn chu trình STEM từ ý tưởng → lập trình → tạo hình → sản phẩm.",
+      "week": 1,
+      "day": "Saturday",
+      "time": "08:00 - 11:00",
+      "duration": "3 hours",
+      "level": "Beginner",
+      "instructor": "STEMIFI Team",
+      "capacity": 25,
+      "enrolled": 0,
+      "color": "from-blue-500/20 to-blue-600/20",
+      "borderColor": "border-blue-400/30",
+      "tags": ["STEM", "Thực hành", "Blockly", "Micro:bit", "3D Printing"],
+      "date": "",
+      "schedule": [
+        { "time": "08:00 – 08:15", "activity": "Khởi động & Giới thiệu" },
+        { "time": "08:15 – 09:00", "activity": "Làm quen Blockly & Micro:bit (MakeCode)" },
+        { "time": "09:00 – 09:45", "activity": "Kết nối Micro:bit với mô hình thực (LED/Servo/Sensor)" },
+        { "time": "09:45 – 10:30", "activity": "Thiết kế & In 3D linh kiện (Tinkercad → STL → Slicer)" },
+        { "time": "10:30 – 10:55", "activity": "Trình diễn & Chia sẻ kết quả nhóm" },
+        { "time": "10:55 – 11:00", "activity": "Tổng kết & Lưu niệm" }
+      ],
+      "location": "Phòng Lab / Makerspace",
+      "banner": "/workshop-1-banner.jpg",
+      "whyJoin": [
+        {
+          "title": "Hiểu nguyên lý Blockly (MakeCode)",
+          "description": "Nắm các khối lệnh cơ bản và cách tư duy thuật toán bằng kéo–thả."
+        },
+        {
+          "title": "Lập trình Micro:bit điều khiển mô hình",
+          "description": "Kết nối phần cứng (LED, Servo, Sensor) để tạo tương tác thực tế."
+        },
+        {
+          "title": "Biết quy trình thiết kế & in 3D",
+          "description": "Thiết kế chi tiết trên Tinkercad và quan sát in mẫu trên máy in 3D."
+        },
+        {
+          "title": "Trải nghiệm chu trình STEM hoàn chỉnh",
+          "description": "Từ ý tưởng → Lập trình → Tạo hình → Sản phẩm, rèn kỹ năng làm việc nhóm và thuyết trình."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "WORKSHOP 2",
+      "description": "Chương trình học tập trải nghiệm – thực hành trực tiếp",
+      "week": 2,
+      "day": "Saturday",
+      "time": "8:00 AM - 11:15 AM",
+      "duration": "3.25 hours",
+      "level": "Beginner",
+      "instructor": "STEMIFI Team",
+      "capacity": 25,
+      "enrolled": 0,
+      "color": "from-cyan-500/20 to-cyan-600/20",
+      "borderColor": "border-cyan-400/30",
+      "tags": ["STEM", "Thực hành", "Lập trình"],
+      "date": "",
+      "schedule": [
+        { "time": "08:00", "activity": "Check-in & khởi động" },
+        { "time": "08:15", "activity": "Giới thiệu chủ đề & mục tiêu" },
+        { "time": "08:40", "activity": "Thực hành có hướng dẫn" },
+        { "time": "10:10", "activity": "Nâng cao & mở rộng" },
+        { "time": "11:00", "activity": "Tổng kết & định hướng" }
+      ],
+      "location": "STEMIFI Lab (hoặc cập nhật theo tuần)",
+      "whyJoin": [
+        {
+          "title": "Trải nghiệm thực hành",
+          "description": "Học đi đôi với làm – học sinh được tự tay lắp ráp, lập trình và kiểm thử sản phẩm theo chủ đề của buổi."
+        },
+        {
+          "title": "Định hướng STEM",
+          "description": "Nội dung bám sát mục tiêu trải nghiệm khoa học, công nghệ, kỹ thuật và toán học một cách trực quan."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "WORKSHOP 3",
+      "description": "Chương trình học tập trải nghiệm – thực hành trực tiếp",
+      "week": 3,
+      "day": "Saturday",
+      "time": "8:00 AM - 11:15 AM",
+      "duration": "3.25 hours",
+      "level": "Beginner",
+      "instructor": "STEMIFI Team",
+      "capacity": 25,
+      "enrolled": 0,
+      "color": "from-purple-500/20 to-purple-600/20",
+      "borderColor": "border-purple-400/30",
+      "tags": ["STEM", "Thực hành", "Lập trình"],
+      "date": "",
+      "schedule": [
+        { "time": "08:00", "activity": "Check-in & khởi động" },
+        { "time": "08:15", "activity": "Giới thiệu chủ đề & mục tiêu" },
+        { "time": "08:40", "activity": "Thực hành có hướng dẫn" },
+        { "time": "10:10", "activity": "Nâng cao & mở rộng" },
+        { "time": "11:00", "activity": "Tổng kết & định hướng" }
+      ],
+      "location": "STEMIFI Lab (hoặc cập nhật theo tuần)",
+      "whyJoin": [
+        {
+          "title": "Trải nghiệm thực hành",
+          "description": "Học đi đôi với làm – học sinh được tự tay lắp ráp, lập trình và kiểm thử sản phẩm theo chủ đề của buổi."
+        },
+        {
+          "title": "Định hướng STEM",
+          "description": "Nội dung bám sát mục tiêu trải nghiệm khoa học, công nghệ, kỹ thuật và toán học một cách trực quan."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "WORKSHOP 4",
+      "description": "Chương trình học tập trải nghiệm – thực hành trực tiếp",
+      "week": 4,
+      "day": "Saturday",
+      "time": "8:00 AM - 11:15 AM",
+      "duration": "3.25 hours",
+      "level": "Beginner",
+      "instructor": "STEMIFI Team",
+      "capacity": 25,
+      "enrolled": 0,
+      "color": "from-emerald-500/20 to-emerald-600/20",
+      "borderColor": "border-emerald-400/30",
+      "tags": ["STEM", "Thực hành", "Lập trình"],
+      "date": "",
+      "schedule": [
+        { "time": "08:00", "activity": "Check-in & khởi động" },
+        { "time": "08:15", "activity": "Giới thiệu chủ đề & mục tiêu" },
+        { "time": "08:40", "activity": "Thực hành có hướng dẫn" },
+        { "time": "10:10", "activity": "Nâng cao & mở rộng" },
+        { "time": "11:00", "activity": "Tổng kết & định hướng" }
+      ],
+      "location": "STEMIFI Lab (hoặc cập nhật theo tuần)",
+      "whyJoin": [
+        {
+          "title": "Trải nghiệm thực hành",
+          "description": "Học đi đôi với làm – học sinh được tự tay lắp ráp, lập trình và kiểm thử sản phẩm theo chủ đề của buổi."
+        },
+        {
+          "title": "Định hướng STEM",
+          "description": "Nội dung bám sát mục tiêu trải nghiệm khoa học, công nghệ, kỹ thuật và toán học một cách trực quan."
+        }
+      ]
+    }
+  ]
+}
