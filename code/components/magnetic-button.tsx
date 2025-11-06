@@ -53,7 +53,7 @@ export function MagneticButton({
     primary:
       "bg-foreground/95 text-background hover:bg-foreground backdrop-blur-md hover:scale-[1.02] active:scale-[0.98]",
     secondary:
-      "bg-foreground/5 text-foreground hover:bg-foreground/10 backdrop-blur-xl border border-foreground/10 hover:border-foreground/20",
+      "bg-foreground/20 text-foreground hover:bg-foreground/30 backdrop-blur-xl border border-foreground/20 hover:border-foreground/30 font-semibold",
     ghost: "bg-transparent text-foreground hover:bg-foreground/5 backdrop-blur-sm",
   }
 

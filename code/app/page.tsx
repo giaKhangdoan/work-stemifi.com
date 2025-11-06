@@ -298,10 +298,10 @@ export default function Home() {
         {/* General info under taskbar, above hero */}
         <section className="relative z-20 mt-56 md:mt-60 w-full px-4 md:px-6">
           <div className="flex w-full items-center justify-center">
-            <div className="w-full max-w-3xl rounded-2xl border border-foreground/10 bg-foreground/10 px-5 py-6 text-center backdrop-blur md:max-w-4xl md:px-8 md:py-8 shadow-[0_10px_30px_rgba(0,0,0,0.2)]">
+            <div className="w-full max-w-3xl rounded-2xl border border-foreground/10 bg-foreground/30 px-5 py-6 text-center backdrop-blur md:max-w-4xl md:px-8 md:py-8 shadow-[0_10px_30px_rgba(0,0,0,0.2)]">
               <p className="font-sans text-base font-semibold uppercase tracking-widest text-[#56C4C3] md:text-lg">{generalInfo.title}</p>
               <p className="mt-2 font-sans text-2xl font-bold leading-tight text-foreground md:text-3xl">{generalInfo.subtitle}</p>
-              <p className="mt-2 font-sans text-base text-foreground/80 md:text-lg">{generalInfo.note}</p>
+              <p className="mt-2 font-sans text-base text-foreground/95 md:text-lg">{generalInfo.note}</p>
             </div>
           </div>
         </section>
@@ -312,7 +312,7 @@ export default function Home() {
         >
           <div className="mx-auto w-full max-w-6xl">
             {/* Glass Card Container */}
-            <div className="relative overflow-hidden rounded-3xl border border-white/20 bg-white/10 backdrop-blur-xl shadow-[0_20px_60px_rgba(0,0,0,0.3)] p-6 md:p-10 lg:p-12">
+            <div className="relative overflow-hidden rounded-3xl border border-white/20 bg-white/30 backdrop-blur-xl shadow-[0_20px_60px_rgba(0,0,0,0.3)] p-6 md:p-10 lg:p-12">
               {/* Gradient Glow Background */}
               <div className="absolute inset-0 bg-gradient-to-br from-[#56C4C3]/20 via-transparent to-[#375AA9]/20 opacity-50 blur-3xl" />
               
@@ -320,12 +320,7 @@ export default function Home() {
                 {/* Left Column - Content */}
                 <div className="md:col-span-7 flex flex-col justify-center">
                   {/* Logo/Brand */}
-                  <div className="mb-4 flex items-center gap-3">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-[#375AA9] to-[#56C4C3]">
-                      <span className="font-mono text-lg font-bold text-white">S</span>
-                    </div>
-                    <span className="font-sans text-sm font-semibold tracking-tight text-foreground/90">STEMIFI MAKERS</span>
-                  </div>
+           
 
                   {/* Title with Gradient Glow */}
                   <div className="mb-4 relative">
@@ -341,37 +336,37 @@ export default function Home() {
                         </span>
                       </span>
                     </h1>
-                    <p className="mt-3 font-sans text-sm leading-relaxed tracking-tight text-foreground/80 md:text-base">
+                    <p className="mt-3 font-sans text-sm leading-relaxed tracking-tight text-foreground/95 md:text-base">
                       {currentWorkshop?.description || "Chương trình học tập trải nghiệm – thực hành trực tiếp"}
                     </p>
                   </div>
 
                   {/* Info Cards */}
                   <div className="mb-6 grid gap-3 sm:grid-cols-2">
-                    <div className="rounded-xl border border-white/20 bg-white/5 backdrop-blur-sm p-4">
+                    <div className="rounded-xl border border-white/20 bg-white/25 backdrop-blur-sm p-4">
                       <div className="mb-2 flex items-center gap-2">
                         <Clock className="h-4 w-4 text-[#56C4C3]" />
-                        <p className="font-mono text-xs font-semibold uppercase tracking-widest text-foreground/60">Lịch</p>
+                        <p className="font-mono text-xs font-semibold uppercase tracking-widest text-foreground">Lịch</p>
                       </div>
                       <p className="font-sans text-sm font-medium tracking-tight text-foreground">
                         {saturdayDate || "Thứ Bảy hàng tuần"}
                       </p>
                     </div>
 
-                    <div className="rounded-xl border border-white/20 bg-white/5 backdrop-blur-sm p-4">
+                    <div className="rounded-xl border border-white/20 bg-white/25 backdrop-blur-sm p-4">
                       <div className="mb-2 flex items-center gap-2">
                         <Clock className="h-4 w-4 text-[#56C4C3]" />
-                        <p className="font-mono text-xs font-semibold uppercase tracking-widest text-foreground/60">Thời gian</p>
+                        <p className="font-mono text-xs font-semibold uppercase tracking-widest text-foreground">Thời gian</p>
                       </div>
                       <p className="font-sans text-sm font-bold tracking-tight text-yellow-400">
                         {currentWorkshop?.time || "8:00 - 11:15 AM"}
                       </p>
                     </div>
 
-                    <div className="rounded-xl border border-white/20 bg-white/5 backdrop-blur-sm p-4 sm:col-span-2">
+                    <div className="rounded-xl border border-white/20 bg-white/25 backdrop-blur-sm p-4 sm:col-span-2">
                       <div className="mb-2 flex items-center gap-2">
                         <MapPin className="h-4 w-4 text-[#56C4C3]" />
-                        <p className="font-mono text-xs font-semibold uppercase tracking-widest text-foreground/60">Địa điểm</p>
+                        <p className="font-mono text-xs font-semibold uppercase tracking-widest text-foreground">Địa điểm</p>
                       </div>
                       <p className="font-sans text-sm font-medium tracking-tight text-foreground">
                         {currentWorkshop?.location || "STEMIFI Lab"}
@@ -394,7 +389,7 @@ export default function Home() {
                 <div className="md:col-span-5 flex flex-col items-center justify-center gap-6">
                   {/* Micro:bit Image */}
                   {currentWorkshop?.banner && (
-                    <div className="relative w-full max-w-xs overflow-hidden rounded-2xl border border-white/20 bg-white/5 p-4 shadow-lg">
+                    <div className="relative w-full max-w-xs overflow-hidden rounded-2xl border border-white/20 bg-white/25 p-4 shadow-lg">
                       <img
                         src={currentWorkshop.banner}
                         alt={currentWorkshop.title}
@@ -405,22 +400,22 @@ export default function Home() {
                   )}
 
                   {/* QR Code & Registration */}
-                  <div className="w-full rounded-2xl border border-white/20 bg-white/10 backdrop-blur-sm p-6 text-center">
-                    <p className="mb-3 font-mono text-xs font-semibold uppercase tracking-widest text-foreground/70">
+                  <div className="w-full rounded-2xl border border-white/20 bg-white/30 backdrop-blur-sm p-6 text-center">
+                    <p className="mb-3 font-mono text-xs font-semibold uppercase tracking-widest text-foreground">
                       QR Đăng ký
                     </p>
                     <div className="mb-3 flex items-center justify-center">
-                      <div className="flex h-32 w-32 items-center justify-center rounded-lg border-2 border-dashed border-white/30 bg-white/5">
-                        <QrCode className="h-16 w-16 text-foreground/40" />
+                      <div className="flex h-32 w-32 items-center justify-center rounded-lg border-2 border-dashed border-white/30 bg-white/25">
+                        <QrCode className="h-16 w-16 text-foreground" />
                       </div>
                     </div>
-                    <p className="mb-4 font-sans text-xs tracking-tight text-foreground/80">
+                    <p className="mb-4 font-sans text-xs tracking-tight text-foreground font-medium">
                       Quét QR để mở form đăng ký
                     </p>
                     <div className="space-y-1 text-left">
-                      <p className="font-mono text-xs text-foreground/60">{contactInfo.hotlineDisplay}</p>
-                      <p className="font-mono text-xs text-foreground/60">{contactInfo.email}</p>
-                      <p className="font-mono text-xs text-foreground/60">www.stemifi.com</p>
+                      <p className="font-mono text-xs text-foreground">{contactInfo.hotlineDisplay}</p>
+                      <p className="font-mono text-xs text-foreground">{contactInfo.email}</p>
+                      <p className="font-mono text-xs text-foreground">www.stemifi.com</p>
                     </div>
                   </div>
                 </div>
@@ -443,8 +438,8 @@ export default function Home() {
                 // Kiểm tra dữ liệu
                 if (!currentWorkshop) {
                   return (
-                    <div className="col-span-2 flex flex-col items-center justify-center gap-4 rounded-2xl border border-foreground/10 bg-foreground/5 py-12">
-                      <p className="font-sans text-lg text-foreground/60">Đang tải thông tin...</p>
+                    <div className="col-span-2 flex flex-col items-center justify-center gap-4 rounded-2xl border border-foreground/10 bg-foreground/25 py-12">
+                      <p className="font-sans text-lg text-foreground">Đang tải thông tin...</p>
                     </div>
                   )
                 }
@@ -452,8 +447,8 @@ export default function Home() {
                 const whyJoinData = currentWorkshop.whyJoin
                 if (!whyJoinData || whyJoinData.length === 0) {
                   return (
-                    <div className="col-span-2 flex flex-col items-center justify-center gap-4 rounded-2xl border border-foreground/10 bg-foreground/5 py-12">
-                      <p className="font-sans text-lg text-foreground/60">Chưa có thông tin về lý do tham gia.</p>
+                    <div className="col-span-2 flex flex-col items-center justify-center gap-4 rounded-2xl border border-foreground/10 bg-foreground/25 py-12">
+                      <p className="font-sans text-lg text-foreground">Chưa có thông tin về lý do tham gia.</p>
                     </div>
                   )
                 }
@@ -461,7 +456,7 @@ export default function Home() {
                 return whyJoinData.map((item, index) => (
                   <div
                     key={index}
-                    className="group relative overflow-hidden rounded-3xl border border-foreground/10 bg-foreground/5 backdrop-blur-xl p-8 md:p-10 transition-all duration-300 hover:border-[#56C4C3]/30 hover:bg-foreground/10 hover:shadow-lg hover:shadow-[#56C4C3]/10"
+                    className="group relative overflow-hidden rounded-3xl border border-foreground/10 bg-foreground/25 backdrop-blur-xl p-8 md:p-10 transition-all duration-300 hover:border-[#56C4C3]/30 hover:bg-foreground/35 hover:shadow-lg hover:shadow-[#56C4C3]/10"
                   >
                     {/* Decorative gradient accent */}
                     <div className="absolute -right-20 -top-20 h-40 w-40 rounded-full bg-gradient-to-br from-[#56C4C3]/20 to-[#279595]/20 blur-3xl transition-all duration-500 group-hover:scale-150" />
@@ -470,7 +465,7 @@ export default function Home() {
                       <h3 className="mb-4 font-sans text-xl font-bold text-foreground md:text-2xl">
                         {item.title}
                       </h3>
-                      <p className="text-base leading-relaxed text-foreground/90 md:text-lg">
+                      <p className="text-base leading-relaxed text-foreground md:text-lg">
                         {item.description}
                       </p>
                     </div>
@@ -488,7 +483,7 @@ export default function Home() {
               Nội dung {currentWorkshop?.title || "Workshop"}
             </h2>
 
-            <div className="rounded-3xl border border-foreground/10 bg-foreground/5 backdrop-blur-xl p-8 md:p-12 lg:p-16">
+            <div className="rounded-3xl border border-foreground/10 bg-foreground/25 backdrop-blur-xl p-8 md:p-12 lg:p-16">
               <div className="space-y-6 md:space-y-8">
                 {currentWorkshop?.schedule && currentWorkshop.schedule.length > 0 ? (
                   currentWorkshop.schedule.map((item, index) => (
@@ -559,8 +554,8 @@ export default function Home() {
               Đăng ký tham gia
             </h2>
 
-            <div className="rounded-2xl border border-foreground/10 bg-foreground/5 backdrop-blur-xl p-6 md:p-10">
-              <p className="mb-6 text-center leading-relaxed text-foreground/90">
+            <div className="rounded-2xl border border-foreground/10 bg-foreground/25 backdrop-blur-xl p-6 md:p-10">
+              <p className="mb-6 text-center leading-relaxed text-foreground">
                 {registrationInfo.description}
               </p>
 
@@ -574,7 +569,7 @@ export default function Home() {
                   Mở form đăng ký
                 </MagneticButton>
 
-                <p className="text-center text-sm text-foreground/60">
+                <p className="text-center text-sm text-foreground">
                   {registrationInfo.disclaimer}
                 </p>
               </div>
@@ -591,7 +586,7 @@ export default function Home() {
 
             <div className="grid gap-4 md:grid-cols-2 md:gap-6">
               {/* Contact Info Card */}
-              <div className="group relative rounded-2xl border border-foreground/20 bg-foreground/10 backdrop-blur-xl p-6 md:p-8 shadow-[0_8px_32px_rgba(0,0,0,0.3),0_4px_16px_rgba(86,196,195,0.2),inset_0_1px_0_rgba(255,255,255,0.1)] transform transition-all duration-500 hover:scale-105 hover:shadow-[0_12px_48px_rgba(0,0,0,0.4),0_6px_24px_rgba(86,196,195,0.3),inset_0_1px_0_rgba(255,255,255,0.2)] hover:-translate-y-2">
+              <div className="group relative rounded-2xl border border-foreground/20 bg-foreground/30 backdrop-blur-xl p-6 md:p-8 shadow-[0_8px_32px_rgba(0,0,0,0.3),0_4px_16px_rgba(86,196,195,0.2),inset_0_1px_0_rgba(255,255,255,0.1)] transform transition-all duration-500 hover:scale-105 hover:shadow-[0_12px_48px_rgba(0,0,0,0.4),0_6px_24px_rgba(86,196,195,0.3),inset_0_1px_0_rgba(255,255,255,0.2)] hover:-translate-y-2">
                 {/* Glow effect */}
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#56C4C3]/20 via-transparent to-[#375AA9]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl" />
                 
@@ -600,22 +595,22 @@ export default function Home() {
 
                   <div className="space-y-4">
                     <div>
-                      <p className="font-mono text-xs text-foreground/60 mb-1">Địa chỉ</p>
-                      <p className="text-foreground/90">{contactInfo.address}</p>
+                      <p className="font-mono text-xs text-foreground mb-1 font-semibold">Địa chỉ</p>
+                      <p className="text-foreground font-medium">{contactInfo.address}</p>
                     </div>
 
                     <div>
-                      <p className="font-mono text-xs text-foreground/60 mb-1">Hotline</p>
-                      <a href={`tel:${contactInfo.hotline}`} className="text-[#56C4C3] hover:text-[#375AA9] transition-colors font-medium">
+                      <p className="font-mono text-xs text-foreground mb-1 font-semibold">Hotline</p>
+                      <a href={`tel:${contactInfo.hotline}`} className="text-[#56C4C3] hover:text-[#375AA9] transition-colors font-semibold">
                         {contactInfo.hotlineDisplay}
                       </a>
                     </div>
 
                     <div>
-                      <p className="font-mono text-xs text-foreground/60 mb-1">Email</p>
+                      <p className="font-mono text-xs text-foreground mb-1 font-semibold">Email</p>
                       <a
                         href={`mailto:${contactInfo.email}`}
-                        className="text-[#56C4C3] hover:text-[#375AA9] transition-colors font-medium"
+                        className="text-[#56C4C3] hover:text-[#375AA9] transition-colors font-semibold"
                       >
                         {contactInfo.email}
                       </a>
@@ -625,18 +620,18 @@ export default function Home() {
                   {/* Quick Info moved here */}
                   <div className="mt-6 border-t border-foreground/10 pt-6">
                     <div className="mb-4 flex flex-col items-center">
-                      <div className="mb-4 flex h-32 w-32 items-center justify-center rounded-lg border-2 border-dashed border-foreground/30 bg-foreground/5">
-                        <QrCode className="h-16 w-16 text-foreground/40" />
+                      <div className="mb-4 flex h-32 w-32 items-center justify-center rounded-lg border-2 border-dashed border-foreground/30 bg-foreground/25">
+                        <QrCode className="h-16 w-16 text-foreground" />
                       </div>
-                      <p className="text-center font-sans text-sm font-semibold text-foreground/90">QR đăng ký</p>
-                      <p className="mt-2 text-center text-base text-foreground/90">Quét QR để mở form đăng ký.</p>
+                      <p className="text-center font-sans text-sm font-bold text-foreground">QR đăng ký</p>
+                      <p className="mt-2 text-center text-base text-foreground font-medium">Quét QR để mở form đăng ký.</p>
                     </div>
                   </div>
                 </div>
               </div>
 
               {/* Map Placeholder Card */}
-              <div className="group relative rounded-2xl border border-foreground/20 bg-foreground/10 backdrop-blur-xl p-6 md:p-8 shadow-[0_8px_32px_rgba(0,0,0,0.3),0_4px_16px_rgba(86,196,195,0.2),inset_0_1px_0_rgba(255,255,255,0.1)] transform transition-all duration-500 hover:scale-105 hover:shadow-[0_12px_48px_rgba(0,0,0,0.4),0_6px_24px_rgba(86,196,195,0.3),inset_0_1px_0_rgba(255,255,255,0.2)] hover:-translate-y-2">
+              <div className="group relative rounded-2xl border border-foreground/20 bg-foreground/30 backdrop-blur-xl p-6 md:p-8 shadow-[0_8px_32px_rgba(0,0,0,0.3),0_4px_16px_rgba(86,196,195,0.2),inset_0_1px_0_rgba(255,255,255,0.1)] transform transition-all duration-500 hover:scale-105 hover:shadow-[0_12px_48px_rgba(0,0,0,0.4),0_6px_24px_rgba(86,196,195,0.3),inset_0_1px_0_rgba(255,255,255,0.2)] hover:-translate-y-2">
                 {/* Glow effect */}
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#56C4C3]/20 via-transparent to-[#375AA9]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl" />
                 
@@ -663,7 +658,7 @@ export default function Home() {
         {/* Footer */}
         <footer className="border-t border-foreground/10 px-6 py-8 md:px-12">
           <div className="mx-auto flex w-full max-w-7xl items-center justify-between">
-            <p className="font-mono text-sm text-foreground/60">© 2025 STEMIFI MAKERS</p>
+            <p className="font-mono text-sm text-foreground">© 2025 STEMIFI MAKERS</p>
             <a
               href="https://stemifi.com"
               target="_blank"
