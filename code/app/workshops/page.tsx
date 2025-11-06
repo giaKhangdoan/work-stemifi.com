@@ -94,8 +94,8 @@ export default function WorkshopsPage() {
       >
         <Shader className="h-full w-full">
           <Swirl
-            colorA="#375AA9"
-            colorB="#279595"
+            colorA="#7B9AD9"
+            colorB="#70C0C0"
             speed={0.8}
             detail={0.8}
             blend={50}
@@ -107,11 +107,11 @@ export default function WorkshopsPage() {
             fineY={40}
           />
           <ChromaFlow
-            baseColor="#375AA9"
-            upColor="#56C4C3"
-            downColor="#333333"
-            leftColor="#279595"
-            rightColor="#56C4C3"
+            baseColor="#7B9AD9"
+            upColor="#9EE8E7"
+            downColor="#777777"
+            leftColor="#70C0C0"
+            rightColor="#9EE8E7"
             intensity={0.9}
             radius={1.8}
             momentum={25}
@@ -119,7 +119,7 @@ export default function WorkshopsPage() {
             opacity={0.97}
           />
         </Shader>
-        <div className="absolute inset-0 bg-black/20" />
+        <div className="absolute inset-0 bg-black/5" />
       </div>
 
       {/* Header */}
@@ -129,8 +129,8 @@ export default function WorkshopsPage() {
             href="/"
             className="flex items-center gap-2 transition-transform hover:scale-105"
           >
-            <ArrowLeft className="h-5 w-5 text-foreground/80" />
-            <span className="font-sans text-lg font-semibold text-foreground">Quay lại</span>
+            <ArrowLeft className="h-5 w-5 text-black/70" />
+            <span className="font-sans text-lg font-medium text-black/90">Quay lại</span>
           </Link>
 
           <div className="flex items-center gap-3">
@@ -149,10 +149,10 @@ export default function WorkshopsPage() {
       <div className="relative z-10 px-6 py-12 md:px-12 md:py-16">
         <div className="mx-auto w-full max-w-7xl">
           <div className="mb-12">
-            <h1 className="mb-4 font-sans text-4xl font-bold text-foreground md:text-5xl lg:text-6xl">
+            <h1 className="mb-4 font-sans text-4xl font-semibold text-black/90 md:text-5xl lg:text-6xl">
               Tất cả Workshop
             </h1>
-            <p className="text-lg text-foreground/80">
+            <p className="text-lg text-black/70">
               Xem lại các workshop đã diễn ra và workshop hiện tại
             </p>
           </div>
@@ -162,7 +162,7 @@ export default function WorkshopsPage() {
             <div className="mb-16">
               <div className="mb-6 flex items-center gap-3">
                 <div className="flex h-3 w-3 rounded-full bg-green-400"></div>
-                <h2 className="font-sans text-2xl font-bold text-foreground md:text-3xl">
+                <h2 className="font-sans text-2xl font-semibold text-black/90 md:text-3xl">
                   Workshop Hiện Tại
                 </h2>
               </div>
@@ -174,35 +174,35 @@ export default function WorkshopsPage() {
                     <div
                       key={workshop.id}
                       onClick={() => openModal(workshop)}
-                      className="group relative cursor-pointer overflow-hidden rounded-2xl border border-foreground/10 bg-foreground/5 backdrop-blur-xl p-6 transition-all duration-300 hover:border-[#56C4C3]/30 hover:bg-foreground/10 hover:shadow-lg hover:shadow-[#56C4C3]/10 hover:-translate-y-1"
+                      className="group relative cursor-pointer overflow-hidden rounded-2xl border border-foreground/10 bg-foreground/5 backdrop-blur-xl p-6 transition-all duration-300 hover:border-[#56C4C3]/30 hover:bg-foreground/8 hover:shadow-lg hover:shadow-[#56C4C3]/10 hover:-translate-y-1"
                     >
                       <div className="mb-4 flex items-start justify-between">
                         <div className="flex items-center gap-2 rounded-full bg-green-400/20 px-3 py-1">
                           <CheckCircle className="h-3 w-3 text-green-400" />
-                          <span className="font-mono text-xs font-semibold text-green-400">Đang diễn ra</span>
+                          <span className="font-mono text-xs font-medium text-green-400">Đang diễn ra</span>
                         </div>
                       </div>
 
-                      <h3 className="mb-2 font-sans text-2xl font-semibold text-foreground">{workshop.title}</h3>
-                      <p className="mb-4 text-sm leading-relaxed text-foreground/80">{workshop.description}</p>
+                      <h3 className="mb-2 font-sans text-2xl font-medium text-black/90">{workshop.title}</h3>
+                      <p className="mb-4 text-sm leading-relaxed text-black/70">{workshop.description}</p>
 
                       <div className="space-y-3 border-t border-foreground/10 pt-4">
                         <div className="flex items-center gap-2">
-                          <Calendar className="h-4 w-4 text-foreground/60" />
-                          <span className="font-sans text-sm text-foreground/80">
+                          <Calendar className="h-4 w-4 text-black/50" />
+                          <span className="font-sans text-sm text-black/70">
                             {formatDate(saturday)}
                           </span>
                         </div>
 
                         <div className="flex items-center gap-2">
-                          <Clock className="h-4 w-4 text-foreground/60" />
-                          <span className="font-sans text-sm text-foreground/80">{workshop.time}</span>
+                          <Clock className="h-4 w-4 text-black/50" />
+                          <span className="font-sans text-sm text-black/70">{workshop.time}</span>
                         </div>
 
                         {workshop.location && (
                           <div className="flex items-center gap-2">
-                            <MapPin className="h-4 w-4 text-foreground/60" />
-                            <span className="font-sans text-sm text-foreground/80">{workshop.location}</span>
+                            <MapPin className="h-4 w-4 text-black/50" />
+                            <span className="font-sans text-sm text-black/70">{workshop.location}</span>
                           </div>
                         )}
                       </div>
@@ -213,7 +213,7 @@ export default function WorkshopsPage() {
                           {workshop.tags.map((tag, index) => (
                             <span
                               key={index}
-                              className="rounded-full bg-foreground/10 px-2.5 py-1 font-sans text-[11px] font-semibold uppercase tracking-widest text-foreground/70"
+                              className="rounded-full bg-foreground/8 px-2.5 py-1 font-sans text-[11px] font-medium uppercase tracking-widest text-black/60"
                             >
                               {tag}
                             </span>
@@ -231,7 +231,7 @@ export default function WorkshopsPage() {
           <div>
             <div className="mb-6 flex items-center gap-3">
               <div className="flex h-3 w-3 rounded-full bg-foreground/40"></div>
-              <h2 className="font-sans text-2xl font-bold text-foreground md:text-3xl">
+              <h2 className="font-sans text-2xl font-semibold text-black/90 md:text-3xl">
                 Workshop Đã Diễn Ra
               </h2>
             </div>
@@ -244,28 +244,28 @@ export default function WorkshopsPage() {
                     <div
                       key={workshop.id}
                       onClick={() => openModal(workshop)}
-                      className="group relative cursor-pointer overflow-hidden rounded-2xl border border-foreground/10 bg-foreground/5 backdrop-blur-xl p-6 transition-all duration-300 hover:border-[#56C4C3]/30 hover:bg-foreground/10 hover:shadow-lg hover:shadow-[#56C4C3]/10 hover:-translate-y-1"
+                      className="group relative cursor-pointer overflow-hidden rounded-2xl border border-foreground/10 bg-foreground/5 backdrop-blur-xl p-6 transition-all duration-300 hover:border-[#56C4C3]/30 hover:bg-foreground/8 hover:shadow-lg hover:shadow-[#56C4C3]/10 hover:-translate-y-1"
                     >
-                      <h3 className="mb-2 font-sans text-2xl font-bold text-foreground">{workshop.title}</h3>
-                      <p className="mb-4 text-sm leading-relaxed text-foreground/70">{workshop.description}</p>
+                      <h3 className="mb-2 font-sans text-2xl font-semibold text-black/90">{workshop.title}</h3>
+                      <p className="mb-4 text-sm leading-relaxed text-black/60">{workshop.description}</p>
 
                       <div className="space-y-3 border-t border-foreground/10 pt-4">
                         <div className="flex items-center gap-2">
-                          <Calendar className="h-4 w-4 text-foreground/60" />
-                          <span className="font-mono text-sm text-foreground/80">
+                          <Calendar className="h-4 w-4 text-black/50" />
+                          <span className="font-mono text-sm text-black/70">
                             {formatDate(saturday)}
                           </span>
                         </div>
 
                         <div className="flex items-center gap-2">
-                          <Clock className="h-4 w-4 text-foreground/60" />
-                          <span className="font-mono text-sm text-foreground/80">{workshop.time}</span>
+                          <Clock className="h-4 w-4 text-black/50" />
+                          <span className="font-mono text-sm text-black/70">{workshop.time}</span>
                         </div>
 
                         {workshop.location && (
                           <div className="flex items-center gap-2">
-                            <MapPin className="h-4 w-4 text-foreground/60" />
-                            <span className="font-mono text-sm text-foreground/80">{workshop.location}</span>
+                            <MapPin className="h-4 w-4 text-black/50" />
+                            <span className="font-mono text-sm text-black/70">{workshop.location}</span>
                           </div>
                         )}
                       </div>
@@ -276,7 +276,7 @@ export default function WorkshopsPage() {
                           {workshop.tags.map((tag, index) => (
                             <span
                               key={index}
-                              className="rounded-full bg-foreground/10 px-3 py-1 font-mono text-xs text-foreground/70"
+                              className="rounded-full bg-foreground/8 px-3 py-1 font-mono text-xs text-black/60"
                             >
                               {tag}
                             </span>
@@ -289,8 +289,8 @@ export default function WorkshopsPage() {
               </div>
             ) : (
               <div className="flex flex-col items-center justify-center gap-4 rounded-2xl border border-foreground/10 bg-foreground/5 py-12">
-                <p className="font-sans text-lg text-foreground/60">Chưa có workshop nào đã diễn ra</p>
-                <p className="font-mono text-sm text-foreground/40">Các workshop sẽ xuất hiện ở đây sau khi diễn ra</p>
+                <p className="font-sans text-lg text-black/50">Chưa có workshop nào đã diễn ra</p>
+                <p className="font-mono text-sm text-black/40">Các workshop sẽ xuất hiện ở đây sau khi diễn ra</p>
               </div>
             )}
           </div>
@@ -304,19 +304,19 @@ export default function WorkshopsPage() {
           onClick={closeModal}
         >
           {/* Backdrop */}
-          <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
+          <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
 
           {/* Modal Content */}
           <div
-            className="relative z-10 w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-3xl border border-foreground/20 bg-foreground/10 backdrop-blur-xl shadow-[0_20px_60px_rgba(0,0,0,0.5)]"
+            className="relative z-10 w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-3xl border border-white/20 bg-white/40 backdrop-blur-xl shadow-[0_20px_60px_rgba(0,0,0,0.5)]"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close Button */}
             <button
               onClick={closeModal}
-              className="absolute right-4 top-4 z-20 rounded-full bg-foreground/10 p-2 transition-all hover:bg-foreground/20 hover:scale-110"
+              className="absolute right-4 top-4 z-20 rounded-full bg-foreground/8 p-2 transition-all hover:bg-foreground/20 hover:scale-110"
             >
-              <X className="h-5 w-5 text-foreground" />
+              <X className="h-5 w-5 text-black/90" />
             </button>
 
             {/* Banner */}
@@ -335,10 +335,10 @@ export default function WorkshopsPage() {
             <div className="p-6 md:p-8 lg:p-10">
               {/* Header */}
               <div className="mb-6">
-                <h2 className="mb-3 font-sans text-4xl font-bold text-foreground md:text-5xl">
+                <h2 className="mb-3 font-sans text-4xl font-semibold text-black/90 md:text-5xl">
                   {selectedWorkshop.title}
                 </h2>
-                <p className="text-lg leading-relaxed text-foreground/90">
+                <p className="text-lg leading-relaxed text-black/80">
                   {selectedWorkshop.description}
                 </p>
               </div>
@@ -348,8 +348,8 @@ export default function WorkshopsPage() {
                 <div className="flex items-start gap-3 rounded-xl border border-foreground/10 bg-foreground/5 p-4">
                   <Calendar className="h-5 w-5 shrink-0 text-[#56C4C3] mt-0.5" />
                   <div>
-                    <p className="mb-1 font-mono text-xs text-foreground/60">Ngày</p>
-                    <p className="font-semibold text-foreground">
+                    <p className="mb-1 font-mono text-xs text-black/50">Ngày</p>
+                    <p className="font-medium text-black/90">
                       {formatDate(getSaturdayByWeek(selectedWorkshop.week))}
                     </p>
                   </div>
@@ -358,8 +358,8 @@ export default function WorkshopsPage() {
                 <div className="flex items-start gap-3 rounded-xl border border-foreground/10 bg-foreground/5 p-4">
                   <Clock className="h-5 w-5 shrink-0 text-[#56C4C3] mt-0.5" />
                   <div>
-                    <p className="mb-1 font-mono text-xs text-foreground/60">Thời gian</p>
-                    <p className="font-semibold text-foreground">{selectedWorkshop.time}</p>
+                    <p className="mb-1 font-mono text-xs text-black/50">Thời gian</p>
+                    <p className="font-medium text-black/90">{selectedWorkshop.time}</p>
                   </div>
                 </div>
 
@@ -367,19 +367,19 @@ export default function WorkshopsPage() {
                   <div className="flex items-start gap-3 rounded-xl border border-foreground/10 bg-foreground/5 p-4">
                     <MapPin className="h-5 w-5 shrink-0 text-[#56C4C3] mt-0.5" />
                     <div>
-                      <p className="mb-1 font-mono text-xs text-foreground/60">Địa điểm</p>
-                      <p className="font-semibold text-foreground">{selectedWorkshop.location}</p>
+                      <p className="mb-1 font-mono text-xs text-black/50">Địa điểm</p>
+                      <p className="font-medium text-black/90">{selectedWorkshop.location}</p>
                     </div>
                   </div>
                 )}
 
                 <div className="flex items-start gap-3 rounded-xl border border-foreground/10 bg-foreground/5 p-4">
                   <div className="h-5 w-5 shrink-0 text-[#56C4C3] mt-0.5 flex items-center justify-center">
-                    <span className="text-xs font-bold">Lv</span>
+                    <span className="text-xs font-semibold">Lv</span>
                   </div>
                   <div>
-                    <p className="mb-1 font-mono text-xs text-foreground/60">Cấp độ</p>
-                    <p className="font-semibold text-foreground">{selectedWorkshop.level}</p>
+                    <p className="mb-1 font-mono text-xs text-black/50">Cấp độ</p>
+                    <p className="font-medium text-black/90">{selectedWorkshop.level}</p>
                   </div>
                 </div>
               </div>
@@ -387,24 +387,29 @@ export default function WorkshopsPage() {
               {/* Schedule */}
               {selectedWorkshop.schedule && selectedWorkshop.schedule.length > 0 && (
                 <div className="mb-8">
-                  <h3 className="mb-4 font-sans text-2xl font-bold text-foreground">
+                  <h3 className="mb-4 font-sans text-2xl font-semibold text-black/90">
                     Nội dung Workshop
                   </h3>
-                  <div className="space-y-4 rounded-2xl border border-foreground/10 bg-foreground/5 p-6">
+                  <div className="space-y-6 md:space-y-8 rounded-3xl border border-foreground/10 bg-foreground/25 backdrop-blur-xl p-8 md:p-12 lg:p-16">
                     {selectedWorkshop.schedule.map((item, index) => (
                       <div
                         key={index}
-                        className="flex items-start gap-4 rounded-xl border border-foreground/10 bg-foreground/5 p-4"
+                        className="group flex items-start gap-6 transition-all duration-300 hover:translate-x-2"
                       >
-                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#56C4C3] to-[#279595] shadow-lg shadow-[#56C4C3]/30">
-                          <span className="font-mono text-sm font-bold text-white">{index + 1}</span>
+                        {/* Bullet Point with Glow Effect */}
+                        <div className="relative flex h-10 w-10 shrink-0 items-center justify-center">
+                          <div className="absolute h-10 w-10 rounded-full bg-[#00FFE8]/30 blur-md group-hover:bg-[#00FFE8]/50 transition-all duration-300" />
+                          <div className="relative flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-[#00FFE8] to-[#00C8FF] shadow-lg shadow-[#00FFE8]/30">
+                            <div className="h-4 w-4 rounded-full bg-white/90" />
+                          </div>
                         </div>
-                        <div className="flex-1">
-                          <div className="mb-1 flex items-baseline gap-3">
-                            <p className="font-mono font-bold text-[#56C4C3]">{item.time}</p>
+                        {/* Content */}
+                        <div className="flex-1 pt-1">
+                          <div className="mb-2 flex items-baseline gap-3">
+                            <p className="font-mono text-base font-medium text-black/80 md:text-lg">{item.time}</p>
                             <div className="h-px flex-1 bg-gradient-to-r from-foreground/20 to-transparent" />
                           </div>
-                          <p className="text-foreground/90">{item.activity}</p>
+                          <p className="text-base leading-relaxed text-black/80 md:text-lg">{item.activity}</p>
                         </div>
                       </div>
                     ))}
@@ -415,7 +420,7 @@ export default function WorkshopsPage() {
               {/* Why Join */}
               {selectedWorkshop.whyJoin && selectedWorkshop.whyJoin.length > 0 && (
                 <div className="mb-8">
-                  <h3 className="mb-4 font-sans text-2xl font-bold text-foreground">
+                  <h3 className="mb-4 font-sans text-2xl font-semibold text-black/90">
                     Vì sao nên tham gia?
                   </h3>
                   <div className="grid gap-4 md:grid-cols-2">
@@ -424,10 +429,10 @@ export default function WorkshopsPage() {
                         key={index}
                         className="rounded-xl border border-foreground/10 bg-foreground/5 p-5 backdrop-blur-xl"
                       >
-                        <h4 className="mb-2 font-sans text-lg font-bold text-foreground">
+                        <h4 className="mb-2 font-sans text-lg font-semibold text-black/90">
                           {item.title}
                         </h4>
-                        <p className="text-foreground/80">{item.description}</p>
+                        <p className="text-black/70">{item.description}</p>
                       </div>
                     ))}
                   </div>
@@ -437,12 +442,12 @@ export default function WorkshopsPage() {
               {/* Tags */}
               {selectedWorkshop.tags && selectedWorkshop.tags.length > 0 && (
                 <div className="mb-8">
-                  <h3 className="mb-3 font-sans text-xl font-bold text-foreground">Tags</h3>
+                  <h3 className="mb-3 font-sans text-xl font-semibold text-black/90">Tags</h3>
                   <div className="flex flex-wrap gap-2">
                     {selectedWorkshop.tags.map((tag, index) => (
                       <span
                         key={index}
-                        className="rounded-full bg-[#56C4C3]/20 px-4 py-2 font-mono text-sm font-semibold text-[#56C4C3]"
+                        className="rounded-full border border-foreground/20 bg-foreground/8 px-4 py-2 font-mono text-sm font-semibold text-black/90"
                       >
                         {tag}
                       </span>
@@ -452,39 +457,39 @@ export default function WorkshopsPage() {
               )}
 
               {/* Contact Info */}
-              <div className="rounded-2xl border border-foreground/20 bg-foreground/10 p-6 backdrop-blur-xl">
-                <h3 className="mb-4 font-sans text-xl font-bold text-foreground">Liên hệ</h3>
+              <div className="rounded-2xl border border-foreground/20 bg-foreground/8 p-6 backdrop-blur-xl">
+                <h3 className="mb-4 font-sans text-xl font-semibold text-black/90">Liên hệ</h3>
                 <div className="grid gap-4 md:grid-cols-3">
                   <a
                     href="tel:0906856025"
-                    className="flex items-center gap-3 rounded-xl border border-foreground/10 bg-foreground/5 p-4 transition-all hover:border-[#56C4C3]/30 hover:bg-foreground/10"
+                    className="flex items-center gap-3 rounded-xl border border-foreground/10 bg-foreground/5 p-4 transition-all hover:border-[#56C4C3]/30 hover:bg-foreground/8"
                   >
                     <Phone className="h-5 w-5 text-[#56C4C3]" />
                     <div>
-                      <p className="text-xs text-foreground/60">Hotline</p>
-                      <p className="font-semibold text-foreground">0906 856 025</p>
+                      <p className="text-xs text-black/50">Hotline</p>
+                      <p className="font-medium text-black/90">0906 856 025</p>
                     </div>
                   </a>
                   <a
                     href="mailto:workshop@stemifi.com"
-                    className="flex items-center gap-3 rounded-xl border border-foreground/10 bg-foreground/5 p-4 transition-all hover:border-[#56C4C3]/30 hover:bg-foreground/10"
+                    className="flex items-center gap-3 rounded-xl border border-foreground/10 bg-foreground/5 p-4 transition-all hover:border-[#56C4C3]/30 hover:bg-foreground/8"
                   >
                     <Mail className="h-5 w-5 text-[#56C4C3]" />
                     <div>
-                      <p className="text-xs text-foreground/60">Email</p>
-                      <p className="font-semibold text-foreground">workshop@stemifi.com</p>
+                      <p className="text-xs text-black/50">Email</p>
+                      <p className="font-medium text-black/90">workshop@stemifi.com</p>
                     </div>
                   </a>
                   <a
                     href="https://stemifi.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-3 rounded-xl border border-foreground/10 bg-foreground/5 p-4 transition-all hover:border-[#56C4C3]/30 hover:bg-foreground/10"
+                    className="flex items-center gap-3 rounded-xl border border-foreground/10 bg-foreground/5 p-4 transition-all hover:border-[#56C4C3]/30 hover:bg-foreground/8"
                   >
                     <Globe className="h-5 w-5 text-[#56C4C3]" />
                     <div>
-                      <p className="text-xs text-foreground/60">Website</p>
-                      <p className="font-semibold text-foreground">stemifi.com</p>
+                      <p className="text-xs text-black/50">Website</p>
+                      <p className="font-medium text-black/90">stemifi.com</p>
                     </div>
                   </a>
                 </div>

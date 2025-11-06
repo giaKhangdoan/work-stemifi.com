@@ -1,17 +1,13 @@
 import type React from "react"
 import type { Metadata } from "next"
 import BackToTopButton from "@/components/back-to-top"
-import { Geist, Geist_Mono } from "next/font/google"
+import { Montserrat } from "next/font/google"
 import "./globals.css"
 
-const geist = Geist({
+const montserrat = Montserrat({
   subsets: ["latin"],
-  variable: "--font-geist",
-})
-
-const geistMono = Geist_Mono({
-  subsets: ["latin"],
-  variable: "--font-geist-mono",
+  variable: "--font-montserrat",
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 })
 
 export const metadata: Metadata = {
@@ -23,6 +19,9 @@ export const metadata: Metadata = {
     shortcut: "/stemifi-logo.png",
     apple: "/stemifi-logo.png",
   },
+  other: {
+    "google-fonts": "Elms+Sans:ital,wght@0,100..900;1,100..900|Montserrat:ital,wght@0,100..900;1,100..900|Quintessential",
+  },
 }
 
 export default function RootLayout({
@@ -32,7 +31,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geist.variable} ${geistMono.variable} font-sans antialiased`}>
+      <body className={`${montserrat.variable} antialiased`}>
         {children}
         <BackToTopButton />
       </body>

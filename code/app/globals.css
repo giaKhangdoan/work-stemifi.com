@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@import url('https://fonts.googleapis.com/css2?family=Elms+Sans:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quintessential&display=swap');
+
 @custom-variant dark (&:is(.dark *));
 
 :root {
@@ -76,8 +78,9 @@
 
 @theme inline {
   /* optional: --font-sans, --font-serif, --font-mono if they are applied in the layout.tsx */
-  --font-sans: var(--font-geist), sans-serif;
-  --font-mono: var(--font-geist-mono), monospace;
+  --font-sans: "Elms Sans", "Montserrat", sans-serif;
+  --font-mono: var(--font-montserrat), "Montserrat", sans-serif;
+  --font-serif: "Quintessential", serif;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);

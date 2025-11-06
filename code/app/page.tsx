@@ -5,7 +5,7 @@ import { CustomCursor } from "@/components/custom-cursor"
 import { GrainOverlay } from "@/components/grain-overlay"
 import { MagneticButton } from "@/components/magnetic-button"
 import { useRef, useEffect, useState } from "react"
-import { Clock, MapPin, Phone, Mail, Globe, QrCode } from "lucide-react"
+import { Clock, MapPin, Phone, Mail, Globe } from "lucide-react"
 import {
   getCurrentWeek,
   getCurrentWeekSaturday,
@@ -122,8 +122,8 @@ export default function Home() {
       >
         <Shader className="h-full w-full">
           <Swirl
-            colorA="#375AA9"
-            colorB="#279595"
+            colorA="#1800AD"
+            colorB="#00C8FF"
             speed={0.8}
             detail={0.8}
             blend={50}
@@ -135,11 +135,11 @@ export default function Home() {
             fineY={40}
           />
           <ChromaFlow
-            baseColor="#375AA9"
-            upColor="#56C4C3"
+            baseColor="#1800AD"
+            upColor="#00FFE8"
             downColor="#333333"
-            leftColor="#279595"
-            rightColor="#56C4C3"
+            leftColor="#00C8FF"
+            rightColor="#00FFE8"
             intensity={0.9}
             radius={1.8}
             momentum={25}
@@ -147,7 +147,7 @@ export default function Home() {
             opacity={0.97}
           />
         </Shader>
-        <div className="absolute inset-0 bg-black/20" />
+        <div className="absolute inset-0 bg-black/15" />
       </div>
 
       {/* Background Images Layer - Floating Micro:bit and Robot Images */}
@@ -252,7 +252,7 @@ export default function Home() {
         </button>
 
         {/* Menu under logo */}
-        <div className="flex items-center gap-6 rounded-full bg-black/10 px-4 py-2 backdrop-blur md:gap-8">
+        <div className="flex items-center gap-6 rounded-full bg-white/20 px-4 py-2 backdrop-blur-md md:gap-8">
           {[
             { label: "Giới thiệu", id: "about", type: "section" },
             { label: "Nội dung", id: "content", type: "section" },
@@ -263,10 +263,9 @@ export default function Home() {
                 <a
                   key={item.id}
                   href={item.id}
-                  className="group relative font-sans text-sm font-semibold text-[#56C4C3] transition-colors hover:text-[#375AA9] md:text-base"
+                  className="font-sans text-sm font-normal text-black/80 md:text-base"
                 >
                   {item.label}
-                  <span className="absolute -bottom-1 left-0 h-px w-0 bg-[#56C4C3] transition-all duration-300 group-hover:w-full" />
                 </a>
               )
             }
@@ -274,10 +273,9 @@ export default function Home() {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="group relative font-sans text-sm font-semibold text-[#56C4C3] transition-colors hover:text-[#375AA9] md:text-base"
+                className="font-sans text-sm font-normal text-black/80 md:text-base"
               >
                 {item.label}
-                <span className="absolute -bottom-1 left-0 h-px w-0 bg-[#56C4C3] transition-all duration-300 group-hover:w-full" />
               </button>
             )
           })}
@@ -285,7 +283,7 @@ export default function Home() {
           {/* CTA Đăng ký nổi bật */}
           <button
             onClick={() => scrollToSection("register")}
-            className="relative rounded-full bg-gradient-to-r from-[#56C4C3] to-[#375AA9] px-4 py-2 font-sans text-sm font-bold text-white shadow-[0_8px_24px_rgba(55,90,169,0.35)] outline-none transition-all hover:brightness-110 focus-visible:ring-4 focus-visible:ring-[#56C4C3]/40 md:px-6 md:text-base"
+            className="relative rounded-full bg-gradient-to-r from-[#00FFE8] to-[#1800AD] px-4 py-2 font-sans text-sm font-medium text-black/80 shadow-[0_8px_24px_rgba(24,0,173,0.35)] outline-none transition-all hover:brightness-110 focus-visible:ring-4 focus-visible:ring-[#00FFE8]/40 md:px-6 md:text-base"
           >
             Đăng ký
             <span className="pointer-events-none absolute inset-0 rounded-full ring-2 ring-white/10" />
@@ -299,9 +297,9 @@ export default function Home() {
         <section className="relative z-20 mt-56 md:mt-60 w-full px-4 md:px-6">
           <div className="flex w-full items-center justify-center">
             <div className="w-full max-w-3xl rounded-2xl border border-foreground/10 bg-foreground/30 px-5 py-6 text-center backdrop-blur md:max-w-4xl md:px-8 md:py-8 shadow-[0_10px_30px_rgba(0,0,0,0.2)]">
-              <p className="font-sans text-base font-semibold uppercase tracking-widest text-[#56C4C3] md:text-lg">{generalInfo.title}</p>
-              <p className="mt-2 font-sans text-2xl font-bold leading-tight text-foreground md:text-3xl">{generalInfo.subtitle}</p>
-              <p className="mt-2 font-sans text-base text-foreground/95 md:text-lg">{generalInfo.note}</p>
+              <p className="font-sans text-base font-normal uppercase tracking-widest text-black/80 md:text-lg">{generalInfo.title}</p>
+              <p className="mt-2 font-sans text-2xl font-medium leading-tight text-black/80 md:text-3xl">{generalInfo.subtitle}</p>
+              <p className="mt-2 font-sans text-base text-black/80 md:text-lg">{generalInfo.note}</p>
             </div>
           </div>
         </section>
@@ -312,9 +310,9 @@ export default function Home() {
         >
           <div className="mx-auto w-full max-w-6xl">
             {/* Glass Card Container */}
-            <div className="relative overflow-hidden rounded-3xl border border-white/20 bg-white/30 backdrop-blur-xl shadow-[0_20px_60px_rgba(0,0,0,0.3)] p-6 md:p-10 lg:p-12">
+            <div className="relative overflow-hidden rounded-3xl border border-white/20 bg-white/40 backdrop-blur-xl shadow-[0_20px_60px_rgba(0,0,0,0.3)] p-6 md:p-10 lg:p-12">
               {/* Gradient Glow Background */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#56C4C3]/20 via-transparent to-[#375AA9]/20 opacity-50 blur-3xl" />
+              <div className="absolute inset-0 bg-gradient-to-br from-[#00FFE8]/20 via-transparent to-[#1800AD]/20 opacity-50 blur-3xl" />
               
               <div className="relative z-10 grid gap-8 md:grid-cols-12 md:gap-8">
                 {/* Left Column - Content */}
@@ -324,51 +322,46 @@ export default function Home() {
 
                   {/* Title with Gradient Glow */}
                   <div className="mb-4 relative">
-                    <h1 className="mb-2 font-sans text-3xl font-bold tracking-tight text-foreground md:text-4xl lg:text-5xl">
-                      <span className="text-[#375AA9]">STEMIFI</span>
+                    <h1 className="mb-2 font-sans text-3xl font-medium tracking-tight text-black/80 md:text-4xl lg:text-5xl">
+                      <span className="text-black/80">STEMIFI</span>
                       <br />
-                      <span className="relative inline-block">
-                        <span className="absolute inset-0 bg-gradient-to-r from-[#56C4C3] via-[#56C4C3] to-white bg-clip-text text-transparent blur-sm opacity-75">
-                          MAKERS WORKSHOP
-                        </span>
-                        <span className="relative bg-gradient-to-r from-[#56C4C3] to-white bg-clip-text text-transparent">
-                          MAKERS WORKSHOP
-                        </span>
+                      <span className="text-black/80">
+                        MAKERS WORKSHOP
                       </span>
                     </h1>
-                    <p className="mt-3 font-sans text-sm leading-relaxed tracking-tight text-foreground/95 md:text-base">
+                    <p className="mt-3 font-sans text-base leading-relaxed tracking-tight text-black/80 font-medium md:text-lg">
                       {currentWorkshop?.description || "Chương trình học tập trải nghiệm – thực hành trực tiếp"}
                     </p>
                   </div>
 
                   {/* Info Cards */}
                   <div className="mb-6 grid gap-3 sm:grid-cols-2">
-                    <div className="rounded-xl border border-white/20 bg-white/25 backdrop-blur-sm p-4">
+                    <div className="rounded-xl border border-white/20 bg-white/35 backdrop-blur-sm p-4">
                       <div className="mb-2 flex items-center gap-2">
-                        <Clock className="h-4 w-4 text-[#56C4C3]" />
-                        <p className="font-mono text-xs font-semibold uppercase tracking-widest text-foreground">Lịch</p>
+                        <Clock className="h-4 w-4 text-black/80" />
+                        <p className="font-mono text-sm font-medium uppercase tracking-widest text-black/80">Lịch</p>
                       </div>
-                      <p className="font-sans text-sm font-medium tracking-tight text-foreground">
+                      <p className="font-sans text-base font-normal tracking-tight text-black/80 ">
                         {saturdayDate || "Thứ Bảy hàng tuần"}
                       </p>
                     </div>
 
-                    <div className="rounded-xl border border-white/20 bg-white/25 backdrop-blur-sm p-4">
+                    <div className="rounded-xl border border-white/20 bg-white/35 backdrop-blur-sm p-4">
                       <div className="mb-2 flex items-center gap-2">
-                        <Clock className="h-4 w-4 text-[#56C4C3]" />
-                        <p className="font-mono text-xs font-semibold uppercase tracking-widest text-foreground">Thời gian</p>
+                        <Clock className="h-4 w-4 text-black/80" />
+                        <p className="font-mono text-sm font-medium uppercase tracking-widest text-black/80">Thời gian</p>
                       </div>
-                      <p className="font-sans text-sm font-bold tracking-tight text-yellow-400">
+                      <p className="font-sans text-base font-medium tracking-tight text-black/80 ">
                         {currentWorkshop?.time || "8:00 - 11:15 AM"}
                       </p>
                     </div>
 
-                    <div className="rounded-xl border border-white/20 bg-white/25 backdrop-blur-sm p-4 sm:col-span-2">
+                    <div className="rounded-xl border border-white/20 bg-white/35 backdrop-blur-sm p-4 sm:col-span-2">
                       <div className="mb-2 flex items-center gap-2">
-                        <MapPin className="h-4 w-4 text-[#56C4C3]" />
-                        <p className="font-mono text-xs font-semibold uppercase tracking-widest text-foreground">Địa điểm</p>
+                        <MapPin className="h-4 w-4 text-black/80" />
+                        <p className="font-mono text-sm font-medium uppercase tracking-widest text-black/80">Địa điểm</p>
                       </div>
-                      <p className="font-sans text-sm font-medium tracking-tight text-foreground">
+                      <p className="font-sans text-base font-normal tracking-tight text-black/80 ">
                         {currentWorkshop?.location || "STEMIFI Lab"}
                       </p>
                     </div>
@@ -389,35 +382,16 @@ export default function Home() {
                 <div className="md:col-span-5 flex flex-col items-center justify-center gap-6">
                   {/* Micro:bit Image */}
                   {currentWorkshop?.banner && (
-                    <div className="relative w-full max-w-xs overflow-hidden rounded-2xl border border-white/20 bg-white/25 p-4 shadow-lg">
+                    <div className="relative w-full overflow-hidden rounded-2xl border border-white/20 bg-white/35 p-4 shadow-lg">
                       <img
                         src={currentWorkshop.banner}
                         alt={currentWorkshop.title}
                         className="mx-auto h-auto w-full object-contain"
-                        style={{ maxHeight: "300px" }}
+                        style={{ maxHeight: "400px" }}
                       />
                     </div>
                   )}
 
-                  {/* QR Code & Registration */}
-                  <div className="w-full rounded-2xl border border-white/20 bg-white/30 backdrop-blur-sm p-6 text-center">
-                    <p className="mb-3 font-mono text-xs font-semibold uppercase tracking-widest text-foreground">
-                      QR Đăng ký
-                    </p>
-                    <div className="mb-3 flex items-center justify-center">
-                      <div className="flex h-32 w-32 items-center justify-center rounded-lg border-2 border-dashed border-white/30 bg-white/25">
-                        <QrCode className="h-16 w-16 text-foreground" />
-                      </div>
-                    </div>
-                    <p className="mb-4 font-sans text-xs tracking-tight text-foreground font-medium">
-                      Quét QR để mở form đăng ký
-                    </p>
-                    <div className="space-y-1 text-left">
-                      <p className="font-mono text-xs text-foreground">{contactInfo.hotlineDisplay}</p>
-                      <p className="font-mono text-xs text-foreground">{contactInfo.email}</p>
-                      <p className="font-mono text-xs text-foreground">www.stemifi.com</p>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
@@ -429,7 +403,7 @@ export default function Home() {
         {/* Why Participate Section */}
         <section id="about" className="flex min-h-screen w-full items-center px-6 py-16 md:px-12 md:py-20">
           <div className="mx-auto w-full max-w-7xl">
-            <h2 className="mb-10 text-center font-sans text-4xl font-bold text-foreground md:text-5xl lg:text-6xl leading-tight" style={{ paddingTop: '0.15em', paddingBottom: '0.15em' }}>
+            <h2 className="mb-10 text-center font-sans text-4xl font-medium text-black/80 md:text-5xl lg:text-6xl leading-tight" style={{ paddingTop: '0.15em', paddingBottom: '0.15em' }}>
               Vì sao nên tham gia?
             </h2>
 
@@ -439,7 +413,7 @@ export default function Home() {
                 if (!currentWorkshop) {
                   return (
                     <div className="col-span-2 flex flex-col items-center justify-center gap-4 rounded-2xl border border-foreground/10 bg-foreground/25 py-12">
-                      <p className="font-sans text-lg text-foreground">Đang tải thông tin...</p>
+                      <p className="font-sans text-lg text-black/80">Đang tải thông tin...</p>
                     </div>
                   )
                 }
@@ -448,7 +422,7 @@ export default function Home() {
                 if (!whyJoinData || whyJoinData.length === 0) {
                   return (
                     <div className="col-span-2 flex flex-col items-center justify-center gap-4 rounded-2xl border border-foreground/10 bg-foreground/25 py-12">
-                      <p className="font-sans text-lg text-foreground">Chưa có thông tin về lý do tham gia.</p>
+                      <p className="font-sans text-lg text-black/80">Chưa có thông tin về lý do tham gia.</p>
                     </div>
                   )
                 }
@@ -456,16 +430,16 @@ export default function Home() {
                 return whyJoinData.map((item, index) => (
                   <div
                     key={index}
-                    className="group relative overflow-hidden rounded-3xl border border-foreground/10 bg-foreground/25 backdrop-blur-xl p-8 md:p-10 transition-all duration-300 hover:border-[#56C4C3]/30 hover:bg-foreground/35 hover:shadow-lg hover:shadow-[#56C4C3]/10"
+                    className="group relative overflow-hidden rounded-3xl border border-foreground/10 bg-foreground/25 backdrop-blur-xl p-8 md:p-10 transition-all duration-300 hover:border-[#00FFE8]/30 hover:bg-foreground/25 hover:shadow-lg hover:shadow-[#00FFE8]/10"
                   >
                     {/* Decorative gradient accent */}
-                    <div className="absolute -right-20 -top-20 h-40 w-40 rounded-full bg-gradient-to-br from-[#56C4C3]/20 to-[#279595]/20 blur-3xl transition-all duration-500 group-hover:scale-150" />
+                    <div className="absolute -right-20 -top-20 h-40 w-40 rounded-full bg-gradient-to-br from-[#00FFE8]/20 to-[#00C8FF]/20 blur-3xl transition-all duration-500 group-hover:scale-150" />
                     
                     <div className="relative z-10">
-                      <h3 className="mb-4 font-sans text-xl font-bold text-foreground md:text-2xl">
+                      <h3 className="mb-4 font-sans text-xl font-medium text-black/80 md:text-2xl">
                         {item.title}
                       </h3>
-                      <p className="text-base leading-relaxed text-foreground md:text-lg">
+                      <p className="text-base leading-relaxed text-black/80 md:text-lg">
                         {item.description}
                       </p>
                     </div>
@@ -479,7 +453,7 @@ export default function Home() {
         {/* Workshop Content Section */}
         <section id="content" className="flex min-h-screen w-full items-center px-6 py-16 md:px-12 md:py-20">
           <div className="mx-auto w-full max-w-5xl">
-            <h2 className="mb-10 text-center font-sans text-4xl font-bold text-foreground md:text-5xl lg:text-6xl leading-tight" style={{ paddingTop: '0.15em', paddingBottom: '0.15em' }}>
+            <h2 className="mb-10 text-center font-sans text-4xl font-medium text-black/80 md:text-5xl lg:text-6xl leading-tight" style={{ paddingTop: '0.15em', paddingBottom: '0.15em' }}>
               Nội dung {currentWorkshop?.title || "Workshop"}
             </h2>
 
@@ -493,8 +467,8 @@ export default function Home() {
                     >
                       {/* Bullet Point with Glow Effect */}
                       <div className="relative flex h-10 w-10 shrink-0 items-center justify-center">
-                        <div className="absolute h-10 w-10 rounded-full bg-[#56C4C3]/30 blur-md group-hover:bg-[#56C4C3]/50 transition-all duration-300" />
-                        <div className="relative flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-[#56C4C3] to-[#279595] shadow-lg shadow-[#56C4C3]/30">
+                        <div className="absolute h-10 w-10 rounded-full bg-[#00FFE8]/30 blur-md group-hover:bg-[#00FFE8]/50 transition-all duration-300" />
+                        <div className="relative flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-[#00FFE8] to-[#00C8FF] shadow-lg shadow-[#00FFE8]/30">
                           <div className="h-4 w-4 rounded-full bg-white/90" />
                         </div>
                       </div>
@@ -502,10 +476,10 @@ export default function Home() {
                       {/* Content */}
                       <div className="flex-1 pt-1">
                         <div className="mb-2 flex items-baseline gap-3">
-                          <p className="font-mono text-base font-bold text-[#56C4C3] md:text-lg">{item.time}</p>
+                          <p className="font-mono text-base font-medium text-black/80 md:text-lg">{item.time}</p>
                           <div className="h-px flex-1 bg-gradient-to-r from-foreground/20 to-transparent" />
                         </div>
-                        <p className="text-base leading-relaxed text-foreground md:text-lg">{item.activity}</p>
+                        <p className="text-base leading-relaxed text-black/80 md:text-lg">{item.activity}</p>
                       </div>
                     </div>
                   ))
@@ -524,8 +498,8 @@ export default function Home() {
                       >
                         {/* Bullet Point with Glow Effect */}
                         <div className="relative flex h-10 w-10 shrink-0 items-center justify-center">
-                          <div className="absolute h-10 w-10 rounded-full bg-[#56C4C3]/30 blur-md group-hover:bg-[#56C4C3]/50 transition-all duration-300" />
-                          <div className="relative flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-[#56C4C3] to-[#279595] shadow-lg shadow-[#56C4C3]/30">
+                          <div className="absolute h-10 w-10 rounded-full bg-[#00FFE8]/30 blur-md group-hover:bg-[#00FFE8]/50 transition-all duration-300" />
+                          <div className="relative flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-[#00FFE8] to-[#00C8FF] shadow-lg shadow-[#00FFE8]/30">
                             <div className="h-4 w-4 rounded-full bg-white/90" />
                           </div>
                         </div>
@@ -533,10 +507,10 @@ export default function Home() {
                         {/* Content */}
                         <div className="flex-1 pt-1">
                           <div className="mb-2 flex items-baseline gap-3">
-                            <p className="font-mono text-lg font-bold text-[#56C4C3] md:text-xl">{item.time}</p>
+                            <p className="font-mono text-lg font-medium text-black/80 md:text-xl">{item.time}</p>
                             <div className="h-px flex-1 bg-gradient-to-r from-foreground/20 to-transparent" />
                           </div>
-                          <p className="text-lg leading-relaxed text-foreground md:text-xl">{item.activity}</p>
+                          <p className="text-lg leading-relaxed text-black/80 md:text-xl">{item.activity}</p>
                         </div>
                       </div>
                     ))}
@@ -550,12 +524,12 @@ export default function Home() {
         {/* Registration Section */}
         <section id="register" className="flex min-h-screen w-full items-center px-6 py-16 md:px-12 md:py-20">
           <div className="mx-auto w-full max-w-2xl">
-            <h2 className="mb-6 text-center font-sans text-4xl font-bold text-foreground md:text-5xl lg:text-6xl leading-tight" style={{ paddingTop: '0.15em', paddingBottom: '0.15em' }}>
+            <h2 className="mb-6 text-center font-sans text-4xl font-medium text-black/80 md:text-5xl lg:text-6xl leading-tight" style={{ paddingTop: '0.15em', paddingBottom: '0.15em' }}>
               Đăng ký tham gia
             </h2>
 
             <div className="rounded-2xl border border-foreground/10 bg-foreground/25 backdrop-blur-xl p-6 md:p-10">
-              <p className="mb-6 text-center leading-relaxed text-foreground">
+              <p className="mb-6 text-center leading-relaxed text-black/80 text-base font-medium md:text-lg ">
                 {registrationInfo.description}
               </p>
 
@@ -569,7 +543,7 @@ export default function Home() {
                   Mở form đăng ký
                 </MagneticButton>
 
-                <p className="text-center text-sm text-foreground">
+                <p className="text-center text-sm font-medium text-black/80 md:text-base ">
                   {registrationInfo.disclaimer}
                 </p>
               </div>
@@ -580,63 +554,53 @@ export default function Home() {
         {/* Contact Section */}
         <section id="contact" className="flex min-h-screen w-full items-center px-6 py-16 md:px-12 md:py-20">
           <div className="mx-auto w-full max-w-7xl">
-            <h2 className="mb-8 text-center font-sans text-4xl font-bold text-foreground md:text-5xl lg:text-6xl drop-shadow-[0_4px_12px_rgba(86,196,195,0.3)] transform transition-all duration-500 hover:scale-105 leading-tight" style={{ paddingTop: '0.15em', paddingBottom: '0.15em' }}>
+            <h2 className="mb-8 text-center font-sans text-4xl font-medium text-black/80 md:text-5xl lg:text-6xl leading-tight" style={{ paddingTop: '0.15em', paddingBottom: '0.15em' }}>
               Liên hệ
             </h2>
 
             <div className="grid gap-4 md:grid-cols-2 md:gap-6">
               {/* Contact Info Card */}
-              <div className="group relative rounded-2xl border border-foreground/20 bg-foreground/30 backdrop-blur-xl p-6 md:p-8 shadow-[0_8px_32px_rgba(0,0,0,0.3),0_4px_16px_rgba(86,196,195,0.2),inset_0_1px_0_rgba(255,255,255,0.1)] transform transition-all duration-500 hover:scale-105 hover:shadow-[0_12px_48px_rgba(0,0,0,0.4),0_6px_24px_rgba(86,196,195,0.3),inset_0_1px_0_rgba(255,255,255,0.2)] hover:-translate-y-2">
+              <div className="group relative rounded-2xl border border-foreground/20 bg-foreground/30 backdrop-blur-xl p-6 md:p-8 shadow-[0_8px_32px_rgba(0,0,0,0.3),0_4px_16px_rgba(0,255,232,0.2),inset_0_1px_0_rgba(255,255,255,0.1)] transform transition-all duration-500 hover:scale-105 hover:shadow-[0_12px_48px_rgba(0,0,0,0.4),0_6px_24px_rgba(0,255,232,0.3),inset_0_1px_0_rgba(255,255,255,0.2)] hover:-translate-y-2">
                 {/* Glow effect */}
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#56C4C3]/20 via-transparent to-[#375AA9]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl" />
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#00FFE8]/20 via-transparent to-[#1800AD]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl" />
                 
                 <div className="relative z-10">
-                  <h3 className="mb-4 font-sans text-xl font-bold text-foreground drop-shadow-[0_2px_8px_rgba(86,196,195,0.2)]">{contactInfo.centerName}</h3>
+                  <h3 className="mb-4 font-sans text-xl font-medium text-black/80">{contactInfo.centerName}</h3>
 
                   <div className="space-y-4">
                     <div>
-                      <p className="font-mono text-xs text-foreground mb-1 font-semibold">Địa chỉ</p>
-                      <p className="text-foreground font-medium">{contactInfo.address}</p>
+                      <p className="font-mono text-sm text-black/80 mb-1.5 font-medium">Địa chỉ</p>
+                      <p className="text-black/80 font-normal text-base">{contactInfo.address}</p>
                     </div>
 
                     <div>
-                      <p className="font-mono text-xs text-foreground mb-1 font-semibold">Hotline</p>
-                      <a href={`tel:${contactInfo.hotline}`} className="text-[#56C4C3] hover:text-[#375AA9] transition-colors font-semibold">
+                      <p className="font-mono text-sm text-black/80 mb-1.5 font-medium">Hotline</p>
+                      <a href={`tel:${contactInfo.hotline}`} className="text-black/80 font-medium text-base">
                         {contactInfo.hotlineDisplay}
                       </a>
                     </div>
 
                     <div>
-                      <p className="font-mono text-xs text-foreground mb-1 font-semibold">Email</p>
+                      <p className="font-mono text-sm text-black/80 mb-1.5 font-medium">Email</p>
                       <a
                         href={`mailto:${contactInfo.email}`}
-                        className="text-[#56C4C3] hover:text-[#375AA9] transition-colors font-semibold"
+                        className="text-black/80 font-medium text-base"
                       >
                         {contactInfo.email}
                       </a>
                     </div>
                   </div>
 
-                  {/* Quick Info moved here */}
-                  <div className="mt-6 border-t border-foreground/10 pt-6">
-                    <div className="mb-4 flex flex-col items-center">
-                      <div className="mb-4 flex h-32 w-32 items-center justify-center rounded-lg border-2 border-dashed border-foreground/30 bg-foreground/25">
-                        <QrCode className="h-16 w-16 text-foreground" />
-                      </div>
-                      <p className="text-center font-sans text-sm font-bold text-foreground">QR đăng ký</p>
-                      <p className="mt-2 text-center text-base text-foreground font-medium">Quét QR để mở form đăng ký.</p>
-                    </div>
-                  </div>
                 </div>
               </div>
 
               {/* Map Placeholder Card */}
-              <div className="group relative rounded-2xl border border-foreground/20 bg-foreground/30 backdrop-blur-xl p-6 md:p-8 shadow-[0_8px_32px_rgba(0,0,0,0.3),0_4px_16px_rgba(86,196,195,0.2),inset_0_1px_0_rgba(255,255,255,0.1)] transform transition-all duration-500 hover:scale-105 hover:shadow-[0_12px_48px_rgba(0,0,0,0.4),0_6px_24px_rgba(86,196,195,0.3),inset_0_1px_0_rgba(255,255,255,0.2)] hover:-translate-y-2">
+              <div className="group relative rounded-2xl border border-foreground/20 bg-foreground/30 backdrop-blur-xl p-6 md:p-8 shadow-[0_8px_32px_rgba(0,0,0,0.3),0_4px_16px_rgba(0,255,232,0.2),inset_0_1px_0_rgba(255,255,255,0.1)] transform transition-all duration-500 hover:scale-105 hover:shadow-[0_12px_48px_rgba(0,0,0,0.4),0_6px_24px_rgba(0,255,232,0.3),inset_0_1px_0_rgba(255,255,255,0.2)] hover:-translate-y-2">
                 {/* Glow effect */}
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#56C4C3]/20 via-transparent to-[#375AA9]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl" />
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#00FFE8]/20 via-transparent to-[#1800AD]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl" />
                 
                 <div className="relative z-10">
-                  <h3 className="mb-6 font-sans text-2xl font-semibold text-foreground drop-shadow-[0_2px_8px_rgba(86,196,195,0.2)]">{mapInfo.title}</h3>
+                  <h3 className="mb-6 font-sans text-2xl font-normal text-black/80 ">{mapInfo.title}</h3>
                   <div className="relative w-full h-64 md:h-80 lg:h-96 rounded-xl overflow-hidden border border-foreground/10 shadow-lg">
                     <iframe
                       src={mapInfo.embedUrl}
@@ -657,16 +621,8 @@ export default function Home() {
 
         {/* Footer */}
         <footer className="border-t border-foreground/10 px-6 py-8 md:px-12">
-          <div className="mx-auto flex w-full max-w-7xl items-center justify-between">
-            <p className="font-mono text-sm text-foreground">© 2025 STEMIFI MAKERS</p>
-            <a
-              href="https://stemifi.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-mono text-sm text-blue-400 hover:text-blue-300 transition-colors"
-            >
-              Website: stemifi.com
-            </a>
+          <div className="mx-auto flex w-full max-w-7xl items-center justify-center">
+            <p className="font-mono text-sm text-black/80">© 2025 STEMIFI MAKERS</p>
           </div>
         </footer>
       </div>
