@@ -263,7 +263,7 @@ export default function Home() {
                 <a
                   key={item.id}
                   href={item.id}
-                  className="font-sans text-sm font-normal text-black/80 md:text-base"
+                  className="font-sans text-sm font-normal text-white md:text-base"
                 >
                   {item.label}
                 </a>
@@ -273,7 +273,7 @@ export default function Home() {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="font-sans text-sm font-normal text-black/80 md:text-base"
+                className="font-sans text-sm font-normal text-white md:text-base"
               >
                 {item.label}
               </button>
@@ -283,7 +283,7 @@ export default function Home() {
           {/* CTA Đăng ký nổi bật */}
           <button
             onClick={() => scrollToSection("register")}
-            className="relative rounded-full bg-gradient-to-r from-[#00FFE8] to-[#1800AD] px-4 py-2 font-sans text-sm font-medium text-black/80 shadow-[0_8px_24px_rgba(24,0,173,0.35)] outline-none transition-all hover:brightness-110 focus-visible:ring-4 focus-visible:ring-[#00FFE8]/40 md:px-6 md:text-base"
+            className="relative rounded-full bg-gradient-to-r from-[#00FFE8] to-[#1800AD] px-4 py-2 font-sans text-sm font-medium text-white shadow-[0_8px_24px_rgba(24,0,173,0.35)] outline-none transition-all hover:brightness-110 focus-visible:ring-4 focus-visible:ring-[#00FFE8]/40 md:px-6 md:text-base"
           >
             Đăng ký
             <span className="pointer-events-none absolute inset-0 rounded-full ring-2 ring-white/10" />
@@ -294,81 +294,81 @@ export default function Home() {
       {/* Main Content */}
       <div className="relative z-10">
         {/* General info under taskbar, above hero */}
-        <section className="relative z-20 mt-56 md:mt-60 w-full px-4 md:px-6">
+        <section className="relative z-20 mt-24 md:mt-32 w-full px-3 md:px-6">
           <div className="flex w-full items-center justify-center">
-            <div className="w-full max-w-3xl rounded-2xl border border-foreground/10 bg-foreground/30 px-5 py-6 text-center backdrop-blur md:max-w-4xl md:px-8 md:py-8 shadow-[0_10px_30px_rgba(0,0,0,0.2)]">
-              <p className="font-sans text-base font-normal uppercase tracking-widest text-black/80 md:text-lg">{generalInfo.title}</p>
-              <p className="mt-2 font-sans text-2xl font-medium leading-tight text-black/80 md:text-3xl">{generalInfo.subtitle}</p>
-              <p className="mt-2 font-sans text-base text-black/80 md:text-lg">{generalInfo.note}</p>
+            <div className="w-full max-w-3xl rounded-2xl border border-foreground/10 bg-foreground/30 px-4 py-3 text-center backdrop-blur md:max-w-4xl md:px-6 md:py-4 shadow-[0_10px_30px_rgba(0,0,0,0.2)]">
+              <p className="font-sans text-base font-normal uppercase tracking-widest text-white md:text-lg">{generalInfo.title}</p>
+              <p className="mt-2 font-sans text-2xl font-medium leading-tight text-white md:text-3xl md:mt-3">{generalInfo.subtitle}</p>
+              <p className="mt-1.5 font-sans text-base text-white md:text-lg md:mt-2">{generalInfo.note}</p>
             </div>
           </div>
         </section>
         {/* Hero Section - Workshop Details */}
         <section
           id="hero"
-          className="flex min-h-screen w-full items-center px-4 pt-20 pb-12 md:px-8 md:pt-24 md:pb-16"
+          className="flex min-h-screen w-full items-center px-3 pt-4 pb-4 md:px-8 md:pt-6 md:pb-6"
         >
           <div className="mx-auto w-full max-w-6xl">
             {/* Glass Card Container */}
-            <div className="relative overflow-hidden rounded-3xl border border-white/20 bg-white/40 backdrop-blur-xl shadow-[0_20px_60px_rgba(0,0,0,0.3)] p-6 md:p-10 lg:p-12">
+            <div className="relative overflow-hidden rounded-3xl border border-white/20 bg-white/40 backdrop-blur-xl shadow-[0_20px_60px_rgba(0,0,0,0.3)] p-3 md:p-4 lg:p-5">
               {/* Gradient Glow Background */}
               <div className="absolute inset-0 bg-gradient-to-br from-[#00FFE8]/20 via-transparent to-[#1800AD]/20 opacity-50 blur-3xl" />
               
-              <div className="relative z-10 grid gap-8 md:grid-cols-12 md:gap-8">
+              <div className="relative z-10 grid gap-2 md:grid-cols-12 md:gap-4">
                 {/* Left Column - Content */}
                 <div className="md:col-span-7 flex flex-col justify-center">
                   {/* Logo/Brand */}
            
 
                   {/* Title with Gradient Glow */}
-                  <div className="mb-4 relative">
-                    <h1 className="mb-2 font-sans text-3xl font-medium tracking-tight text-black/80 md:text-4xl lg:text-5xl">
-                      <span className="text-black/80">STEMIFI</span>
+                  <div className="mb-2 relative">
+                    <h1 className="mb-1 font-sans text-2xl font-medium tracking-tight text-black md:text-4xl lg:text-5xl md:mb-1.5">
+                      <span className="text-black">STEMIFI</span>
                       <br />
-                      <span className="text-black/80">
+                      <span className="text-black">
                         MAKERS WORKSHOP
                       </span>
                     </h1>
-                    <p className="mt-3 font-sans text-base leading-relaxed tracking-tight text-black/80 font-medium md:text-lg">
+                    <p className="mt-1.5 font-sans text-sm leading-relaxed tracking-tight text-black font-medium md:text-lg md:mt-2">
                       {currentWorkshop?.description || "Chương trình học tập trải nghiệm – thực hành trực tiếp"}
                     </p>
                   </div>
 
                   {/* Info Cards */}
-                  <div className="mb-6 grid gap-3 sm:grid-cols-2">
-                    <div className="rounded-xl border border-white/20 bg-white/35 backdrop-blur-sm p-4">
-                      <div className="mb-2 flex items-center gap-2">
-                        <Clock className="h-4 w-4 text-black/80" />
-                        <p className="font-mono text-sm font-medium uppercase tracking-widest text-black/80">Lịch</p>
+                  <div className="mb-2 grid gap-1.5 sm:grid-cols-2 md:mb-3 md:gap-2">
+                    <div className="rounded-xl border border-white/20 bg-white/35 backdrop-blur-sm p-2 md:p-2.5">
+                      <div className="mb-1 flex items-center gap-2">
+                        <Clock className="h-4 w-4 text-black" />
+                        <p className="font-mono text-sm font-medium uppercase tracking-widest text-black">Lịch</p>
                       </div>
-                      <p className="font-sans text-base font-normal tracking-tight text-black/80 ">
+                      <p className="font-sans text-base font-normal tracking-tight text-black ">
                         {saturdayDate || "Thứ Bảy hàng tuần"}
                       </p>
                     </div>
 
-                    <div className="rounded-xl border border-white/20 bg-white/35 backdrop-blur-sm p-4">
-                      <div className="mb-2 flex items-center gap-2">
-                        <Clock className="h-4 w-4 text-black/80" />
-                        <p className="font-mono text-sm font-medium uppercase tracking-widest text-black/80">Thời gian</p>
+                    <div className="rounded-xl border border-white/20 bg-white/35 backdrop-blur-sm p-2 md:p-2.5">
+                      <div className="mb-1 flex items-center gap-2">
+                        <Clock className="h-4 w-4 text-black" />
+                        <p className="font-mono text-sm font-medium uppercase tracking-widest text-black">Thời gian</p>
                       </div>
-                      <p className="font-sans text-base font-medium tracking-tight text-black/80 ">
+                      <p className="font-sans text-base font-medium tracking-tight text-black ">
                         {currentWorkshop?.time || "8:00 - 11:15 AM"}
                       </p>
                     </div>
 
-                    <div className="rounded-xl border border-white/20 bg-white/35 backdrop-blur-sm p-4 sm:col-span-2">
-                      <div className="mb-2 flex items-center gap-2">
-                        <MapPin className="h-4 w-4 text-black/80" />
-                        <p className="font-mono text-sm font-medium uppercase tracking-widest text-black/80">Địa điểm</p>
+                    <div className="rounded-xl border border-white/20 bg-white/35 backdrop-blur-sm p-2 md:p-2.5 sm:col-span-2">
+                      <div className="mb-1 flex items-center gap-2">
+                        <MapPin className="h-4 w-4 text-black" />
+                        <p className="font-mono text-sm font-medium uppercase tracking-widest text-black">Địa điểm</p>
                       </div>
-                      <p className="font-sans text-base font-normal tracking-tight text-black/80 ">
+                      <p className="font-sans text-base font-normal tracking-tight text-black ">
                         {currentWorkshop?.location || "STEMIFI Lab"}
                       </p>
                     </div>
                   </div>
 
                   {/* CTA Buttons */}
-                  <div className="flex flex-col gap-3 sm:flex-row">
+                  <div className="flex flex-col gap-1.5 sm:flex-row sm:gap-2">
                     <MagneticButton size="lg" variant="primary" onClick={() => scrollToSection("register")}>
                       Đăng ký ngay
                     </MagneticButton>
@@ -379,15 +379,15 @@ export default function Home() {
                 </div>
 
                 {/* Right Column - Image & QR */}
-                <div className="md:col-span-5 flex flex-col items-center justify-center gap-6">
+                <div className="md:col-span-5 flex flex-col items-center justify-center gap-2 md:gap-3">
                   {/* Micro:bit Image */}
                   {currentWorkshop?.banner && (
-                    <div className="relative w-full overflow-hidden rounded-2xl border border-white/20 bg-white/35 p-4 shadow-lg">
+                    <div className="relative w-full overflow-hidden rounded-3xl border border-white/20 bg-white/35 p-2 md:p-3 shadow-lg">
                       <img
                         src={currentWorkshop.banner}
                         alt={currentWorkshop.title}
-                        className="mx-auto h-auto w-full object-contain"
-                        style={{ maxHeight: "400px" }}
+                        className="mx-auto h-auto w-full object-contain rounded-2xl"
+                        style={{ maxHeight: "500px" }}
                       />
                     </div>
                   )}
@@ -401,19 +401,19 @@ export default function Home() {
         
 
         {/* Why Participate Section */}
-        <section id="about" className="flex min-h-screen w-full items-center px-6 py-16 md:px-12 md:py-20">
+        <section id="about" className="flex min-h-0 w-full items-center px-4 py-4 md:min-h-screen md:px-12 md:py-8">
           <div className="mx-auto w-full max-w-7xl">
-            <h2 className="mb-10 text-center font-sans text-4xl font-medium text-black/80 md:text-5xl lg:text-6xl leading-tight" style={{ paddingTop: '0.15em', paddingBottom: '0.15em' }}>
+            <h2 className="mb-3 text-center font-sans text-3xl font-medium text-white md:text-5xl lg:text-6xl md:mb-4 leading-tight" style={{ paddingTop: '0.15em', paddingBottom: '0.15em' }}>
               Vì sao nên tham gia?
             </h2>
 
-            <div className="grid gap-6 md:grid-cols-2 md:gap-8">
+            <div className="grid gap-2 md:grid-cols-2 md:gap-3">
               {(() => {
                 // Kiểm tra dữ liệu
                 if (!currentWorkshop) {
                   return (
                     <div className="col-span-2 flex flex-col items-center justify-center gap-4 rounded-2xl border border-foreground/10 bg-foreground/25 py-12">
-                      <p className="font-sans text-lg text-black/80">Đang tải thông tin...</p>
+                      <p className="font-sans text-lg text-white">Đang tải thông tin...</p>
                     </div>
                   )
                 }
@@ -422,7 +422,7 @@ export default function Home() {
                 if (!whyJoinData || whyJoinData.length === 0) {
                   return (
                     <div className="col-span-2 flex flex-col items-center justify-center gap-4 rounded-2xl border border-foreground/10 bg-foreground/25 py-12">
-                      <p className="font-sans text-lg text-black/80">Chưa có thông tin về lý do tham gia.</p>
+                      <p className="font-sans text-lg text-white">Chưa có thông tin về lý do tham gia.</p>
                     </div>
                   )
                 }
@@ -430,16 +430,16 @@ export default function Home() {
                 return whyJoinData.map((item, index) => (
                   <div
                     key={index}
-                    className="group relative overflow-hidden rounded-3xl border border-foreground/10 bg-foreground/25 backdrop-blur-xl p-8 md:p-10 transition-all duration-300 hover:border-[#00FFE8]/30 hover:bg-foreground/25 hover:shadow-lg hover:shadow-[#00FFE8]/10"
+                    className="group relative overflow-hidden rounded-3xl border border-foreground/10 bg-foreground/25 backdrop-blur-xl p-3 md:p-4 transition-all duration-300 hover:border-[#00FFE8]/30 hover:bg-foreground/25 hover:shadow-lg hover:shadow-[#00FFE8]/10"
                   >
                     {/* Decorative gradient accent */}
                     <div className="absolute -right-20 -top-20 h-40 w-40 rounded-full bg-gradient-to-br from-[#00FFE8]/20 to-[#00C8FF]/20 blur-3xl transition-all duration-500 group-hover:scale-150" />
                     
                     <div className="relative z-10">
-                      <h3 className="mb-4 font-sans text-xl font-medium text-black/80 md:text-2xl">
+                      <h3 className="mb-2 font-sans text-xl font-medium text-white md:text-2xl">
                         {item.title}
                       </h3>
-                      <p className="text-base leading-relaxed text-black/80 md:text-lg">
+                      <p className="text-base leading-relaxed text-white md:text-lg">
                         {item.description}
                       </p>
                     </div>
@@ -451,35 +451,35 @@ export default function Home() {
         </section>
 
         {/* Workshop Content Section */}
-        <section id="content" className="flex min-h-screen w-full items-center px-6 py-16 md:px-12 md:py-20">
+        <section id="content" className="flex min-h-0 w-full items-center px-4 py-4 md:min-h-screen md:px-12 md:py-8">
           <div className="mx-auto w-full max-w-5xl">
-            <h2 className="mb-10 text-center font-sans text-4xl font-medium text-black/80 md:text-5xl lg:text-6xl leading-tight" style={{ paddingTop: '0.15em', paddingBottom: '0.15em' }}>
+            <h2 className="mb-3 text-center font-sans text-3xl font-medium text-white md:text-5xl lg:text-6xl md:mb-4 leading-tight" style={{ paddingTop: '0.15em', paddingBottom: '0.15em' }}>
               Nội dung {currentWorkshop?.title || "Workshop"}
             </h2>
 
-            <div className="rounded-3xl border border-foreground/10 bg-foreground/25 backdrop-blur-xl p-8 md:p-12 lg:p-16">
-              <div className="space-y-6 md:space-y-8">
+            <div className="rounded-3xl border border-foreground/10 bg-foreground/25 backdrop-blur-xl p-4 md:p-6 lg:p-8">
+              <div className="space-y-3 md:space-y-4">
                 {currentWorkshop?.schedule && currentWorkshop.schedule.length > 0 ? (
                   currentWorkshop.schedule.map((item, index) => (
                     <div
                       key={index}
-                      className="group flex items-start gap-6 transition-all duration-300 hover:translate-x-2"
+                      className="group flex items-start gap-3 md:gap-4 transition-all duration-300 hover:translate-x-2"
                     >
                       {/* Bullet Point with Glow Effect */}
-                      <div className="relative flex h-10 w-10 shrink-0 items-center justify-center">
-                        <div className="absolute h-10 w-10 rounded-full bg-[#00FFE8]/30 blur-md group-hover:bg-[#00FFE8]/50 transition-all duration-300" />
-                        <div className="relative flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-[#00FFE8] to-[#00C8FF] shadow-lg shadow-[#00FFE8]/30">
-                          <div className="h-4 w-4 rounded-full bg-white/90" />
+                      <div className="relative flex h-8 w-8 shrink-0 items-center justify-center md:h-10 md:w-10">
+                        <div className="absolute h-8 w-8 rounded-full bg-[#00FFE8]/30 blur-md group-hover:bg-[#00FFE8]/50 transition-all duration-300 md:h-10 md:w-10" />
+                        <div className="relative flex h-6 w-6 items-center justify-center rounded-full bg-gradient-to-br from-[#00FFE8] to-[#00C8FF] shadow-lg shadow-[#00FFE8]/30 md:h-8 md:w-8">
+                          <div className="h-3 w-3 rounded-full bg-white/90 md:h-4 md:w-4" />
                         </div>
                       </div>
 
                       {/* Content */}
-                      <div className="flex-1 pt-1">
-                        <div className="mb-2 flex items-baseline gap-3">
-                          <p className="font-mono text-base font-medium text-black/80 md:text-lg">{item.time}</p>
+                      <div className="flex-1 pt-0.5">
+                        <div className="mb-1.5 flex items-baseline gap-2">
+                          <p className="font-mono text-base font-medium text-white md:text-lg">{item.time}</p>
                           <div className="h-px flex-1 bg-gradient-to-r from-foreground/20 to-transparent" />
                         </div>
-                        <p className="text-base leading-relaxed text-black/80 md:text-lg">{item.activity}</p>
+                        <p className="text-base leading-relaxed text-white md:text-lg">{item.activity}</p>
                       </div>
                     </div>
                   ))
@@ -494,23 +494,23 @@ export default function Home() {
                     ].map((item, index) => (
                       <div
                         key={index}
-                        className="group flex items-start gap-6 transition-all duration-300 hover:translate-x-2"
+                        className="group flex items-start gap-3 md:gap-4 transition-all duration-300 hover:translate-x-2"
                       >
                         {/* Bullet Point with Glow Effect */}
-                        <div className="relative flex h-10 w-10 shrink-0 items-center justify-center">
-                          <div className="absolute h-10 w-10 rounded-full bg-[#00FFE8]/30 blur-md group-hover:bg-[#00FFE8]/50 transition-all duration-300" />
-                          <div className="relative flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-[#00FFE8] to-[#00C8FF] shadow-lg shadow-[#00FFE8]/30">
-                            <div className="h-4 w-4 rounded-full bg-white/90" />
+                        <div className="relative flex h-8 w-8 shrink-0 items-center justify-center md:h-10 md:w-10">
+                          <div className="absolute h-8 w-8 rounded-full bg-[#00FFE8]/30 blur-md group-hover:bg-[#00FFE8]/50 transition-all duration-300 md:h-10 md:w-10" />
+                          <div className="relative flex h-6 w-6 items-center justify-center rounded-full bg-gradient-to-br from-[#00FFE8] to-[#00C8FF] shadow-lg shadow-[#00FFE8]/30 md:h-8 md:w-8">
+                            <div className="h-3 w-3 rounded-full bg-white/90 md:h-4 md:w-4" />
                           </div>
                         </div>
 
                         {/* Content */}
-                        <div className="flex-1 pt-1">
-                          <div className="mb-2 flex items-baseline gap-3">
-                            <p className="font-mono text-lg font-medium text-black/80 md:text-xl">{item.time}</p>
+                        <div className="flex-1 pt-0.5">
+                          <div className="mb-1.5 flex items-baseline gap-2">
+                            <p className="font-mono text-base font-medium text-white md:text-lg">{item.time}</p>
                             <div className="h-px flex-1 bg-gradient-to-r from-foreground/20 to-transparent" />
                           </div>
-                          <p className="text-lg leading-relaxed text-black/80 md:text-xl">{item.activity}</p>
+                          <p className="text-base leading-relaxed text-white md:text-lg">{item.activity}</p>
                         </div>
                       </div>
                     ))}
@@ -522,14 +522,14 @@ export default function Home() {
         </section>
 
         {/* Registration Section */}
-        <section id="register" className="flex min-h-screen w-full items-center px-6 py-16 md:px-12 md:py-20">
-          <div className="mx-auto w-full max-w-2xl">
-            <h2 className="mb-6 text-center font-sans text-4xl font-medium text-black/80 md:text-5xl lg:text-6xl leading-tight" style={{ paddingTop: '0.15em', paddingBottom: '0.15em' }}>
+        <section id="register" className="flex min-h-0 w-full items-center px-4 py-2 md:min-h-screen md:px-12 md:py-4">
+          <div className="mx-auto w-full max-w-xl">
+            <h2 className="mb-1 text-center font-sans text-3xl font-medium text-white md:text-5xl lg:text-6xl md:mb-1.5 leading-tight" style={{ paddingTop: '0.15em', paddingBottom: '0.15em' }}>
               Đăng ký tham gia
             </h2>
 
-            <div className="rounded-2xl border border-foreground/10 bg-foreground/25 backdrop-blur-xl p-6 md:p-10">
-              <p className="mb-6 text-center leading-relaxed text-black/80 text-base font-medium md:text-lg ">
+            <div className="rounded-2xl border border-foreground/10 bg-foreground/25 backdrop-blur-xl p-2.5 md:p-3">
+              <p className="mb-2 text-center leading-relaxed text-white text-sm font-medium md:text-lg md:mb-3">
                 {registrationInfo.description}
               </p>
 
@@ -538,12 +538,12 @@ export default function Home() {
                   size="lg"
                   variant="primary"
                   onClick={() => window.open(registrationInfo.formUrl, "_blank")}
-                  className="mb-4"
+                  className="mb-1.5"
                 >
                   Mở form đăng ký
                 </MagneticButton>
 
-                <p className="text-center text-sm font-medium text-black/80 md:text-base ">
+                <p className="text-center text-sm font-medium text-white md:text-base">
                   {registrationInfo.disclaimer}
                 </p>
               </div>
@@ -552,39 +552,39 @@ export default function Home() {
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="flex min-h-screen w-full items-center px-6 py-16 md:px-12 md:py-20">
+        <section id="contact" className="flex min-h-0 w-full items-center px-4 py-4 md:min-h-screen md:px-12 md:py-8">
           <div className="mx-auto w-full max-w-7xl">
-            <h2 className="mb-8 text-center font-sans text-4xl font-medium text-black/80 md:text-5xl lg:text-6xl leading-tight" style={{ paddingTop: '0.15em', paddingBottom: '0.15em' }}>
+            <h2 className="mb-3 text-center font-sans text-3xl font-medium text-white md:text-5xl lg:text-6xl md:mb-4 leading-tight" style={{ paddingTop: '0.15em', paddingBottom: '0.15em' }}>
               Liên hệ
             </h2>
 
-            <div className="grid gap-4 md:grid-cols-2 md:gap-6">
+            <div className="grid gap-2 md:grid-cols-2 md:gap-3">
               {/* Contact Info Card */}
-              <div className="group relative rounded-2xl border border-foreground/20 bg-foreground/30 backdrop-blur-xl p-6 md:p-8 shadow-[0_8px_32px_rgba(0,0,0,0.3),0_4px_16px_rgba(0,255,232,0.2),inset_0_1px_0_rgba(255,255,255,0.1)] transform transition-all duration-500 hover:scale-105 hover:shadow-[0_12px_48px_rgba(0,0,0,0.4),0_6px_24px_rgba(0,255,232,0.3),inset_0_1px_0_rgba(255,255,255,0.2)] hover:-translate-y-2">
+              <div className="group relative rounded-2xl border border-foreground/20 bg-foreground/30 backdrop-blur-xl p-4 md:p-5 shadow-[0_8px_32px_rgba(0,0,0,0.3),0_4px_16px_rgba(0,255,232,0.2),inset_0_1px_0_rgba(255,255,255,0.1)] transform transition-all duration-500 hover:scale-105 hover:shadow-[0_12px_48px_rgba(0,0,0,0.4),0_6px_24px_rgba(0,255,232,0.3),inset_0_1px_0_rgba(255,255,255,0.2)] hover:-translate-y-2">
                 {/* Glow effect */}
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#00FFE8]/20 via-transparent to-[#1800AD]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl" />
                 
                 <div className="relative z-10">
-                  <h3 className="mb-4 font-sans text-xl font-medium text-black/80">{contactInfo.centerName}</h3>
+                  <h3 className="mb-2 font-sans text-xl font-medium text-white">{contactInfo.centerName}</h3>
 
-                  <div className="space-y-4">
+                  <div className="space-y-2">
                     <div>
-                      <p className="font-mono text-sm text-black/80 mb-1.5 font-medium">Địa chỉ</p>
-                      <p className="text-black/80 font-normal text-base">{contactInfo.address}</p>
+                      <p className="font-mono text-sm text-white mb-1.5 font-medium">Địa chỉ</p>
+                      <p className="text-white font-normal text-base">{contactInfo.address}</p>
                     </div>
 
                     <div>
-                      <p className="font-mono text-sm text-black/80 mb-1.5 font-medium">Hotline</p>
-                      <a href={`tel:${contactInfo.hotline}`} className="text-black/80 font-medium text-base">
+                      <p className="font-mono text-sm text-white mb-1.5 font-medium">Hotline</p>
+                      <a href={`tel:${contactInfo.hotline}`} className="text-white font-medium text-base">
                         {contactInfo.hotlineDisplay}
                       </a>
                     </div>
 
                     <div>
-                      <p className="font-mono text-sm text-black/80 mb-1.5 font-medium">Email</p>
+                      <p className="font-mono text-sm text-white mb-1.5 font-medium">Email</p>
                       <a
                         href={`mailto:${contactInfo.email}`}
-                        className="text-black/80 font-medium text-base"
+                        className="text-white font-medium text-base"
                       >
                         {contactInfo.email}
                       </a>
@@ -595,12 +595,12 @@ export default function Home() {
               </div>
 
               {/* Map Placeholder Card */}
-              <div className="group relative rounded-2xl border border-foreground/20 bg-foreground/30 backdrop-blur-xl p-6 md:p-8 shadow-[0_8px_32px_rgba(0,0,0,0.3),0_4px_16px_rgba(0,255,232,0.2),inset_0_1px_0_rgba(255,255,255,0.1)] transform transition-all duration-500 hover:scale-105 hover:shadow-[0_12px_48px_rgba(0,0,0,0.4),0_6px_24px_rgba(0,255,232,0.3),inset_0_1px_0_rgba(255,255,255,0.2)] hover:-translate-y-2">
+              <div className="group relative rounded-2xl border border-foreground/20 bg-foreground/30 backdrop-blur-xl p-4 md:p-5 shadow-[0_8px_32px_rgba(0,0,0,0.3),0_4px_16px_rgba(0,255,232,0.2),inset_0_1px_0_rgba(255,255,255,0.1)] transform transition-all duration-500 hover:scale-105 hover:shadow-[0_12px_48px_rgba(0,0,0,0.4),0_6px_24px_rgba(0,255,232,0.3),inset_0_1px_0_rgba(255,255,255,0.2)] hover:-translate-y-2">
                 {/* Glow effect */}
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#00FFE8]/20 via-transparent to-[#1800AD]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl" />
                 
                 <div className="relative z-10">
-                  <h3 className="mb-6 font-sans text-2xl font-normal text-black/80 ">{mapInfo.title}</h3>
+                  <h3 className="mb-3 font-sans text-2xl font-normal text-white ">{mapInfo.title}</h3>
                   <div className="relative w-full h-64 md:h-80 lg:h-96 rounded-xl overflow-hidden border border-foreground/10 shadow-lg">
                     <iframe
                       src={mapInfo.embedUrl}
@@ -620,9 +620,9 @@ export default function Home() {
         </section>
 
         {/* Footer */}
-        <footer className="border-t border-foreground/10 px-6 py-8 md:px-12">
+        <footer className="border-t border-foreground/10 px-6 py-4 md:px-12 md:py-6">
           <div className="mx-auto flex w-full max-w-7xl items-center justify-center">
-            <p className="font-mono text-sm text-black/80">© 2025 STEMIFI MAKERS</p>
+            <p className="font-mono text-sm text-white">© 2025 STEMIFI MAKERS</p>
           </div>
         </footer>
       </div>
