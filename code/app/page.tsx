@@ -247,7 +247,7 @@ export default function Home() {
           <img
             src="/stemifi-logo.png"
             alt="STEMIFI MAKERS"
-            className="h-18 w-auto object-contain md:h-24"
+            className="h-[64.8px] w-auto object-contain md:h-[86.4px]"
           />
         </button>
 
@@ -296,9 +296,9 @@ export default function Home() {
         {/* General info under taskbar, above hero */}
         <section className="relative z-20 mt-24 md:mt-32 w-full px-3 md:px-6">
           <div className="flex w-full items-center justify-center">
-            <div className="w-full max-w-3xl rounded-2xl border border-foreground/10 bg-foreground/30 px-4 py-3 text-center backdrop-blur md:max-w-4xl md:px-6 md:py-4 shadow-[0_10px_30px_rgba(0,0,0,0.2)]">
+            <div className="w-full max-w-6xl rounded-2xl border border-foreground/10 bg-foreground/30 px-4 py-3 text-center backdrop-blur md:px-6 md:py-4 shadow-[0_10px_30px_rgba(0,0,0,0.2)]">
               <p className="font-sans text-base font-normal uppercase tracking-widest text-white md:text-lg">{generalInfo.title}</p>
-              <p className="mt-2 font-sans text-2xl font-medium leading-tight text-white md:text-3xl md:mt-3">{generalInfo.subtitle}</p>
+              <p className="mt-2 font-sans text-2xl font-medium leading-tight text-white md:text-3xl md:mt-3 whitespace-nowrap">{generalInfo.subtitle}</p>
               <p className="mt-1.5 font-sans text-base text-white md:text-lg md:mt-2">{generalInfo.note}</p>
             </div>
           </div>
@@ -310,24 +310,23 @@ export default function Home() {
         >
           <div className="mx-auto w-full max-w-6xl">
             {/* Glass Card Container */}
-            <div className="relative overflow-hidden rounded-3xl border border-white/20 bg-white/40 backdrop-blur-xl shadow-[0_20px_60px_rgba(0,0,0,0.3)] p-3 md:p-4 lg:p-5">
+            <div className="relative overflow-hidden rounded-2xl border border-white/20 bg-white/40 backdrop-blur-xl shadow-[0_20px_60px_rgba(0,0,0,0.3)] px-4 py-3 md:px-6 md:py-4">
               {/* Gradient Glow Background */}
               <div className="absolute inset-0 bg-gradient-to-br from-[#00FFE8]/20 via-transparent to-[#1800AD]/20 opacity-50 blur-3xl" />
               
               <div className="relative z-10 grid gap-2 md:grid-cols-12 md:gap-4">
                 {/* Left Column - Content */}
-                <div className="md:col-span-7 flex flex-col justify-center">
+                <div className="md:col-span-6 flex flex-col justify-center">
                   {/* Logo/Brand */}
            
 
                   {/* Title with Gradient Glow */}
                   <div className="mb-2 relative">
-                    <h1 className="mb-1 font-sans text-2xl font-medium tracking-tight text-black md:text-4xl lg:text-5xl md:mb-1.5">
+                    <h1 className="mb-1 font-sans text-2xl font-medium text-black md:text-4xl lg:text-5xl md:mb-1.5">
                       <span className="text-black">STEMIFI</span>
+                      <span className="text-black ml-2 md:ml-3">MAKERS</span>
                       <br />
-                      <span className="text-black">
-                        MAKERS WORKSHOP
-                      </span>
+                      <span className="text-black">WORKSHOP</span>
                     </h1>
                     <p className="mt-1.5 font-sans text-sm leading-relaxed tracking-tight text-black font-medium md:text-lg md:mt-2">
                       {currentWorkshop?.description || "Chương trình học tập trải nghiệm – thực hành trực tiếp"}
@@ -379,7 +378,7 @@ export default function Home() {
                 </div>
 
                 {/* Right Column - Image & QR */}
-                <div className="md:col-span-5 flex flex-col items-center justify-center gap-2 md:gap-3">
+                <div className="md:col-span-6 flex flex-col items-center justify-center gap-2 md:gap-3">
                   {/* Micro:bit Image */}
                   {currentWorkshop?.banner && (
                     <div className="relative w-full overflow-hidden rounded-3xl border border-white/20 bg-white/35 p-2 md:p-3 shadow-lg">
@@ -430,7 +429,7 @@ export default function Home() {
                 return whyJoinData.map((item, index) => (
                   <div
                     key={index}
-                    className="group relative overflow-hidden rounded-3xl border border-foreground/10 bg-foreground/25 backdrop-blur-xl p-3 md:p-4 transition-all duration-300 hover:border-[#00FFE8]/30 hover:bg-foreground/25 hover:shadow-lg hover:shadow-[#00FFE8]/10"
+                    className="group relative overflow-hidden rounded-3xl border border-foreground/10 bg-foreground/25 backdrop-blur-xl px-4 py-3 md:px-6 md:py-4 transition-all duration-300 hover:border-[#00FFE8]/30 hover:bg-foreground/25 hover:shadow-lg hover:shadow-[#00FFE8]/10"
                   >
                     {/* Decorative gradient accent */}
                     <div className="absolute -right-20 -top-20 h-40 w-40 rounded-full bg-gradient-to-br from-[#00FFE8]/20 to-[#00C8FF]/20 blur-3xl transition-all duration-500 group-hover:scale-150" />
@@ -457,7 +456,7 @@ export default function Home() {
               Nội dung {currentWorkshop?.title || "Workshop"}
             </h2>
 
-            <div className="rounded-3xl border border-foreground/10 bg-foreground/25 backdrop-blur-xl p-4 md:p-6 lg:p-8">
+            <div className="rounded-3xl border border-foreground/10 bg-foreground/25 backdrop-blur-xl px-4 py-3 md:px-6 md:py-4">
               <div className="space-y-3 md:space-y-4">
                 {currentWorkshop?.schedule && currentWorkshop.schedule.length > 0 ? (
                   currentWorkshop.schedule.map((item, index) => (
@@ -528,7 +527,7 @@ export default function Home() {
               Đăng ký tham gia
             </h2>
 
-            <div className="rounded-2xl border border-foreground/10 bg-foreground/25 backdrop-blur-xl p-2.5 md:p-3">
+            <div className="rounded-2xl border border-foreground/10 bg-foreground/25 backdrop-blur-xl px-4 py-3 md:px-6 md:py-4">
               <p className="mb-2 text-center leading-relaxed text-white text-sm font-medium md:text-lg md:mb-3">
                 {registrationInfo.description}
               </p>
@@ -558,30 +557,30 @@ export default function Home() {
               Liên hệ
             </h2>
 
-            <div className="grid gap-2 md:grid-cols-2 md:gap-3">
+            <div className="grid gap-2 md:grid-cols-2 md:gap-3 md:items-start">
               {/* Contact Info Card */}
-              <div className="group relative rounded-2xl border border-foreground/20 bg-foreground/30 backdrop-blur-xl p-4 md:p-5 shadow-[0_8px_32px_rgba(0,0,0,0.3),0_4px_16px_rgba(0,255,232,0.2),inset_0_1px_0_rgba(255,255,255,0.1)] transform transition-all duration-500 hover:scale-105 hover:shadow-[0_12px_48px_rgba(0,0,0,0.4),0_6px_24px_rgba(0,255,232,0.3),inset_0_1px_0_rgba(255,255,255,0.2)] hover:-translate-y-2">
+              <div className="group relative rounded-2xl border border-foreground/20 bg-foreground/30 backdrop-blur-xl px-4 pt-3 pb-2.5 md:px-5 md:pt-4 md:pb-3 shadow-[0_8px_32px_rgba(0,0,0,0.3),0_4px_16px_rgba(0,255,232,0.2),inset_0_1px_0_rgba(255,255,255,0.1)] transform transition-all duration-500 hover:scale-105 hover:shadow-[0_12px_48px_rgba(0,0,0,0.4),0_6px_24px_rgba(0,255,232,0.3),inset_0_1px_0_rgba(255,255,255,0.2)] hover:-translate-y-2 self-start">
                 {/* Glow effect */}
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#00FFE8]/20 via-transparent to-[#1800AD]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl" />
                 
                 <div className="relative z-10">
-                  <h3 className="mb-2 font-sans text-xl font-medium text-white">{contactInfo.centerName}</h3>
+                  <h3 className="mb-1.5 font-sans text-xl font-medium text-white">{contactInfo.centerName}</h3>
 
-                  <div className="space-y-2">
+                  <div className="space-y-1.5">
                     <div>
-                      <p className="font-mono text-sm text-white mb-1.5 font-medium">Địa chỉ</p>
+                      <p className="font-mono text-sm text-white mb-1 font-medium">Địa chỉ</p>
                       <p className="text-white font-normal text-base">{contactInfo.address}</p>
                     </div>
 
                     <div>
-                      <p className="font-mono text-sm text-white mb-1.5 font-medium">Hotline</p>
+                      <p className="font-mono text-sm text-white mb-1 font-medium">Hotline</p>
                       <a href={`tel:${contactInfo.hotline}`} className="text-white font-medium text-base">
                         {contactInfo.hotlineDisplay}
                       </a>
                     </div>
 
                     <div>
-                      <p className="font-mono text-sm text-white mb-1.5 font-medium">Email</p>
+                      <p className="font-mono text-sm text-white mb-1 font-medium">Email</p>
                       <a
                         href={`mailto:${contactInfo.email}`}
                         className="text-white font-medium text-base"
@@ -595,13 +594,13 @@ export default function Home() {
               </div>
 
               {/* Map Placeholder Card */}
-              <div className="group relative rounded-2xl border border-foreground/20 bg-foreground/30 backdrop-blur-xl p-4 md:p-5 shadow-[0_8px_32px_rgba(0,0,0,0.3),0_4px_16px_rgba(0,255,232,0.2),inset_0_1px_0_rgba(255,255,255,0.1)] transform transition-all duration-500 hover:scale-105 hover:shadow-[0_12px_48px_rgba(0,0,0,0.4),0_6px_24px_rgba(0,255,232,0.3),inset_0_1px_0_rgba(255,255,255,0.2)] hover:-translate-y-2">
+              <div className="group relative rounded-2xl border border-foreground/20 bg-foreground/30 backdrop-blur-xl px-4 pt-3 pb-2.5 md:px-5 md:pt-4 md:pb-3 shadow-[0_8px_32px_rgba(0,0,0,0.3),0_4px_16px_rgba(0,255,232,0.2),inset_0_1px_0_rgba(255,255,255,0.1)] transform transition-all duration-500 hover:scale-105 hover:shadow-[0_12px_48px_rgba(0,0,0,0.4),0_6px_24px_rgba(0,255,232,0.3),inset_0_1px_0_rgba(255,255,255,0.2)] hover:-translate-y-2 self-start">
                 {/* Glow effect */}
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#00FFE8]/20 via-transparent to-[#1800AD]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl" />
                 
                 <div className="relative z-10">
-                  <h3 className="mb-3 font-sans text-2xl font-normal text-white ">{mapInfo.title}</h3>
-                  <div className="relative w-full h-64 md:h-80 lg:h-96 rounded-xl overflow-hidden border border-foreground/10 shadow-lg">
+                  <h3 className="mb-2 font-sans text-2xl font-normal text-white ">{mapInfo.title}</h3>
+                  <div className="relative w-full h-40 md:h-56 lg:h-64 rounded-xl overflow-hidden border border-foreground/10 shadow-lg">
                     <iframe
                       src={mapInfo.embedUrl}
                       width="100%"
