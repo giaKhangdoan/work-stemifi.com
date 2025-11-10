@@ -401,16 +401,15 @@ export default function WorkshopPage() {
 
             <div className="rounded-2xl border border-foreground/10 bg-foreground/5 backdrop-blur-xl p-6 md:p-10">
               <p className="mb-6 text-center leading-relaxed text-foreground/90">
-                Điền form đăng ký theo link bên dưới. Bạn có thể thay link này thành form công khai (Google Form,
-                Typeform...).
+                Điền form đăng ký theo link bên dưới. 
               </p>
 
               <div className="flex flex-col items-center">
                 <MagneticButton
                   size="lg"
                   variant="primary"
-                  onClick={() => window.open("https://forms.google.com", "_blank")}
-                  className="mb-4"
+                  onClick={() => window.open("https://forms.gle/JPkWNjdW344KosrW9", "_blank")}
+                  className="mb-20"
                 >
                   Mở form đăng ký
                 </MagneticButton>

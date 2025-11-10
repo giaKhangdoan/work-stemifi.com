@@ -6,7 +6,7 @@
       "description": "Học sinh làm quen Blockly (MakeCode), lập trình Micro:bit điều khiển mô hình thực, hiểu quy trình thiết kế & in chi tiết 3D và trải nghiệm trọn vẹn chu trình STEM từ ý tưởng → lập trình → tạo hình → sản phẩm.",
       "week": 1,
       "day": "Saturday",
-      "time": "08:00 - 11:00",
+      "time": "08:00 - 11:15",
       "duration": "3 hours",
       "level": "Beginner",
       "instructor": "STEMIFI Team",
@@ -24,12 +24,12 @@
         { "time": "10:30 – 10:55", "activity": "Trình diễn & Chia sẻ kết quả nhóm" },
         { "time": "10:55 – 11:00", "activity": "Tổng kết & Lưu niệm" }
       ],
-      "location": "Phòng Lab / Makerspace",
+      "location": "22 Đ. T2, Vinhomes Grand Park, Thủ Đức, Thành phố Hồ Chí",
       "banner": "/workshop-1-banner.jpg",
       "whyJoin": [
         {
           "title": "Hiểu nguyên lý Blockly (MakeCode)",
-          "description": "Nắm các khối lệnh cơ bản và cách tư duy thuật toán bằng kéo–thả."
+          "description": "Nắm các khối lệnh cơ bản và cách tư duy thuật toán bằng kéo thả."
         },
         {
           "title": "Lập trình Micro:bit điều khiển mô hình",

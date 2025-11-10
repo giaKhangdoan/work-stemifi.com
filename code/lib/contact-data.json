@@ -9,7 +9,7 @@
   },
   "registration": {
     "formUrl": "https://forms.google.com",
-    "description": "Điền form đăng ký theo link bên dưới. Bạn có thể thay link này thành form công khai (Google Form, Typeform...).",
+    "description": "Điền form đăng ký theo link bên dưới.",
     "disclaimer": "* Nếu nút không hoạt động, hãy liên hệ hotline để được hỗ trợ."
   },
   "map": {

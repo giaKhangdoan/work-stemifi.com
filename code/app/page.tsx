@@ -235,7 +235,7 @@ export default function Home() {
 
       {/* Header Navigation */}
       <nav
-        className={`fixed left-0 right-0 top-0 z-50 flex flex-col items-center gap-3 px-6 py-4 transition-opacity duration-700 md:px-12 ${
+        className={`sticky top-0 left-0 right-0 z-50 flex flex-col items-center gap-3 px-6 py-4 transition-opacity duration-700 md:px-12 ${
           isLoaded ? "opacity-100" : "opacity-0"
         }`}
       >
@@ -294,7 +294,7 @@ export default function Home() {
       {/* Main Content */}
       <div className="relative z-10">
         {/* General info under taskbar, above hero */}
-        <section className="relative z-20 mt-24 md:mt-32 w-full px-3 md:px-6">
+        <section className="relative z-20 w-full px-3 md:px-6 pt-4 md:pt-6">
           <div className="flex w-full items-center justify-center">
             <div className="w-full max-w-6xl rounded-2xl border border-foreground/10 bg-foreground/30 px-4 py-3 text-center backdrop-blur md:px-6 md:py-4 shadow-[0_10px_30px_rgba(0,0,0,0.2)]">
               <p className="font-sans text-base font-normal uppercase tracking-widest text-white md:text-lg">{generalInfo.title}</p>
@@ -426,24 +426,39 @@ export default function Home() {
                   )
                 }
                 
-                return whyJoinData.map((item, index) => (
-                  <div
-                    key={index}
-                    className="group relative overflow-hidden rounded-3xl border border-foreground/10 bg-foreground/25 backdrop-blur-xl px-4 py-3 md:px-6 md:py-4 transition-all duration-300 hover:border-[#00FFE8]/30 hover:bg-foreground/25 hover:shadow-lg hover:shadow-[#00FFE8]/10"
-                  >
-                    {/* Decorative gradient accent */}
-                    <div className="absolute -right-20 -top-20 h-40 w-40 rounded-full bg-gradient-to-br from-[#00FFE8]/20 to-[#00C8FF]/20 blur-3xl transition-all duration-500 group-hover:scale-150" />
-                    
-                    <div className="relative z-10">
-                      <h3 className="mb-2 font-sans text-xl font-medium text-white md:text-2xl">
-                        {item.title}
-                      </h3>
-                      <p className="text-base leading-relaxed text-white md:text-lg">
-                        {item.description}
-                      </p>
+                return whyJoinData.map((item, index) => {
+                  // Những câu description cần font-size 16px
+                  const descriptionsToResize = [
+                    "Từ ý tưởng → Lập trình → Tạo hình → Sản phẩm, rèn kỹ năng làm việc nhóm và thuyết trình.",
+                    "Thiết kế chi tiết trên Tinkercad và quan sát in mẫu trên máy in 3D.",
+                    "Nắm các khối lệnh cơ bản và cách tư duy thuật toán bằng kéo–thả.",
+                    "Kết nối phần cứng (LED, Servo, Sensor) để tạo tương tác thực tế."
+                  ];
+                  
+                  const shouldResize = descriptionsToResize.includes(item.description);
+                  
+                  return (
+                    <div
+                      key={index}
+                      className="group relative overflow-hidden rounded-3xl border border-foreground/10 bg-foreground/25 backdrop-blur-xl px-4 py-3 md:px-6 md:py-4 transition-all duration-300 hover:border-[#00FFE8]/30 hover:bg-foreground/25 hover:shadow-lg hover:shadow-[#00FFE8]/10"
+                    >
+                      {/* Decorative gradient accent */}
+                      <div className="absolute -right-20 -top-20 h-40 w-40 rounded-full bg-gradient-to-br from-[#00FFE8]/20 to-[#00C8FF]/20 blur-3xl transition-all duration-500 group-hover:scale-150" />
+                      
+                      <div className="relative z-10">
+                        <h3 className="mb-2 font-sans text-xl font-medium text-white md:text-2xl">
+                          {item.title}
+                        </h3>
+                        <p 
+                          className="text-base leading-relaxed text-white md:text-lg"
+                          style={shouldResize ? { fontSize: '16px' } : {}}
+                        >
+                          {item.description}
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                ))
+                  );
+                })
               })()}
             </div>
           </div>
@@ -453,7 +468,19 @@ export default function Home() {
         <section id="content" className="flex min-h-0 w-full items-center px-4 py-4 md:min-h-screen md:px-12 md:py-8">
           <div className="mx-auto w-full max-w-5xl">
             <h2 className="mb-3 text-center font-sans text-3xl font-medium text-white md:text-5xl lg:text-6xl md:mb-4 leading-tight" style={{ paddingTop: '0.15em', paddingBottom: '0.15em' }}>
-              Nội dung {currentWorkshop?.title || "Workshop"}
+              {currentWorkshop?.title ? (
+                currentWorkshop.title.includes("LẬP TRÌNH BLOCKLY & MICRO:BIT") ? (
+                  <>
+                    <span className="whitespace-nowrap">LẬP TRÌNH BLOCKLY & MICRO:BIT</span>
+                    <br />
+                    ỨNG DỤNG VỚI MÁY IN 3D
+                  </>
+                ) : (
+                  currentWorkshop.title
+                )
+              ) : (
+                "Workshop"
+              )}
             </h2>
 
             <div className="rounded-3xl border border-foreground/10 bg-foreground/25 backdrop-blur-xl px-4 py-3 md:px-6 md:py-4">
@@ -522,29 +549,35 @@ export default function Home() {
 
         {/* Registration Section */}
         <section id="register" className="flex min-h-0 w-full items-center px-4 py-2 md:min-h-screen md:px-12 md:py-4">
-          <div className="mx-auto w-full max-w-xl">
+          <div className="mx-auto w-full max-w-5xl">
             <h2 className="mb-1 text-center font-sans text-3xl font-medium text-white md:text-5xl lg:text-6xl md:mb-1.5 leading-tight" style={{ paddingTop: '0.15em', paddingBottom: '0.15em' }}>
               Đăng ký tham gia
             </h2>
 
-            <div className="rounded-2xl border border-foreground/10 bg-foreground/25 backdrop-blur-xl px-4 py-3 md:px-6 md:py-4">
-              <p className="mb-2 text-center leading-relaxed text-white text-sm font-medium md:text-lg md:mb-3">
-                {registrationInfo.description}
-              </p>
-
-              <div className="flex flex-col items-center">
-                <MagneticButton
-                  size="lg"
-                  variant="primary"
-                  onClick={() => window.open(registrationInfo.formUrl, "_blank")}
-                  className="mb-1.5"
-                >
-                  Mở form đăng ký
-                </MagneticButton>
-
-                <p className="text-center text-sm font-medium text-white md:text-base">
-                  {registrationInfo.disclaimer}
+            <div className="group relative overflow-hidden rounded-3xl border border-foreground/10 bg-foreground/25 backdrop-blur-xl px-4 py-3 md:px-6 md:py-4 transition-all duration-300 hover:border-[#00FFE8]/30 hover:bg-foreground/25 hover:shadow-lg hover:shadow-[#00FFE8]/10">
+              {/* Decorative gradient accent */}
+              <div className="absolute -right-20 -top-20 h-40 w-40 rounded-full bg-gradient-to-br from-[#00FFE8]/20 to-[#00C8FF]/20 blur-3xl transition-all duration-500 group-hover:scale-150" />
+              
+              <div className="relative z-10">
+                <p className="text-center leading-relaxed text-white text-sm font-medium md:text-lg" style={{ marginBottom: 0 }}>
+                  {registrationInfo.description}
                 </p>
+
+                <div className="flex flex-col items-center">
+                  <div style={{ marginTop: '18px', marginBottom: '18px' }}>
+                    <MagneticButton
+                      size="lg"
+                      variant="primary"
+                      onClick={() => window.open(registrationInfo.formUrl, "_blank")}
+                    >
+                      Mở form đăng ký
+                    </MagneticButton>
+                  </div>
+
+                  <p className="text-center text-sm font-medium text-white md:text-base" style={{ marginTop: 0 }}>
+                    {registrationInfo.disclaimer}
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -557,50 +590,46 @@ export default function Home() {
               Liên hệ
             </h2>
 
-            <div className="grid gap-2 md:grid-cols-2 md:gap-3 md:items-start">
-              {/* Contact Info Card */}
-              <div className="group relative rounded-2xl border border-foreground/20 bg-foreground/30 backdrop-blur-xl px-4 pt-3 pb-2.5 md:px-5 md:pt-4 md:pb-3 shadow-[0_8px_32px_rgba(0,0,0,0.3),0_4px_16px_rgba(0,255,232,0.2),inset_0_1px_0_rgba(255,255,255,0.1)] transform transition-all duration-500 hover:scale-105 hover:shadow-[0_12px_48px_rgba(0,0,0,0.4),0_6px_24px_rgba(0,255,232,0.3),inset_0_1px_0_rgba(255,255,255,0.2)] hover:-translate-y-2 self-start">
-                {/* Glow effect */}
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#00FFE8]/20 via-transparent to-[#1800AD]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl" />
-                
-                <div className="relative z-10">
-                  <h3 className="mb-1.5 font-sans text-xl font-medium text-white">{contactInfo.centerName}</h3>
+            {/* Single Container for Contact and Map */}
+            <div className="group relative rounded-2xl border border-foreground/20 bg-foreground/30 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.3),0_4px_16px_rgba(0,255,232,0.2),inset_0_1px_0_rgba(255,255,255,0.1)] transform transition-all duration-500 hover:shadow-[0_12px_48px_rgba(0,0,0,0.4),0_6px_24px_rgba(0,255,232,0.3),inset_0_1px_0_rgba(255,255,255,0.2)] overflow-hidden">
+              {/* Glow effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-[#00FFE8]/20 via-transparent to-[#1800AD]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl" />
+              
+              <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-foreground/20">
+                {/* Contact Info - Left Side */}
+                <div className="px-4 pt-4 pb-3 md:px-6 md:pt-5 md:pb-5">
+                  <h3 className="mb-3 font-sans font-medium text-white" style={{ fontSize: '24px' }}>{contactInfo.centerName}</h3>
 
-                  <div className="space-y-1.5">
+                  <div className="space-y-2 md:space-y-2.5">
                     <div>
-                      <p className="font-mono text-sm text-white mb-1 font-medium">Địa chỉ</p>
-                      <p className="text-white font-normal text-base">{contactInfo.address}</p>
+                      <p className="font-mono text-white mb-1 font-medium" style={{ fontSize: 'calc(0.875rem + 2px)' }}>Địa chỉ</p>
+                      <p className="text-white font-normal" style={{ fontSize: 'calc(1rem + 2px)', whiteSpace: 'nowrap' }}>{contactInfo.address}</p>
                     </div>
 
                     <div>
-                      <p className="font-mono text-sm text-white mb-1 font-medium">Hotline</p>
-                      <a href={`tel:${contactInfo.hotline}`} className="text-white font-medium text-base">
+                      <p className="font-mono text-white mb-1 font-medium" style={{ fontSize: 'calc(0.875rem + 2px)' }}>Hotline</p>
+                      <a href={`tel:${contactInfo.hotline}`} className="text-white font-medium hover:text-[#00FFE8] transition-colors" style={{ fontSize: 'calc(1rem + 2px)' }}>
                         {contactInfo.hotlineDisplay}
                       </a>
                     </div>
 
                     <div>
-                      <p className="font-mono text-sm text-white mb-1 font-medium">Email</p>
+                      <p className="font-mono text-white mb-1 font-medium" style={{ fontSize: 'calc(0.875rem + 2px)' }}>Email</p>
                       <a
                         href={`mailto:${contactInfo.email}`}
-                        className="text-white font-medium text-base"
+                        className="text-white font-medium hover:text-[#00FFE8] transition-colors"
+                        style={{ fontSize: 'calc(1rem + 2px)' }}
                       >
                         {contactInfo.email}
                       </a>
                     </div>
                   </div>
-
                 </div>
-              </div>
 
-              {/* Map Placeholder Card */}
-              <div className="group relative rounded-2xl border border-foreground/20 bg-foreground/30 backdrop-blur-xl px-4 pt-3 pb-2.5 md:px-5 md:pt-4 md:pb-3 shadow-[0_8px_32px_rgba(0,0,0,0.3),0_4px_16px_rgba(0,255,232,0.2),inset_0_1px_0_rgba(255,255,255,0.1)] transform transition-all duration-500 hover:scale-105 hover:shadow-[0_12px_48px_rgba(0,0,0,0.4),0_6px_24px_rgba(0,255,232,0.3),inset_0_1px_0_rgba(255,255,255,0.2)] hover:-translate-y-2 self-start">
-                {/* Glow effect */}
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#00FFE8]/20 via-transparent to-[#1800AD]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl" />
-                
-                <div className="relative z-10">
-                  <h3 className="mb-2 font-sans text-2xl font-normal text-white ">{mapInfo.title}</h3>
-                  <div className="relative w-full h-40 md:h-56 lg:h-64 rounded-xl overflow-hidden border border-foreground/10 shadow-lg">
+                {/* Map - Right Side */}
+                <div className="px-4 pt-3 pb-4 md:px-6 md:pt-5 md:pb-5">
+                  <h3 className="mb-3 font-sans font-medium text-white" style={{ fontSize: '24px' }}>{mapInfo.title}</h3>
+                  <div className="relative w-full h-48 md:h-64 lg:h-72 rounded-xl overflow-hidden border border-foreground/10 shadow-lg">
                     <iframe
                       src={mapInfo.embedUrl}
                       width="100%"

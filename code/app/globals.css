@@ -126,10 +126,12 @@
   }
   html {
     font-family: var(--font-sans);
+    font-size: 16px;
   }
   body {
     @apply bg-background text-foreground font-sans;
     font-family: var(--font-sans);
+    font-size: 16px;
   }
   
   /* Fix Vietnamese diacritics rendering */
@@ -161,6 +163,32 @@
     line-height: 1.5;
     padding-top: 0.05em;
     padding-bottom: 0.05em;
+  }
+  
+  /* Force 2-line layout for workshop title */
+  #content h2 .whitespace-nowrap {
+    white-space: nowrap !important;
+    display: inline-block;
+  }
+  
+  @media (max-width: 768px) {
+    #content h2 {
+      font-size: clamp(1.5rem, 5vw, 2rem) !important;
+    }
+  }
+  
+  /* Set font size to 24px for contact section titles */
+  #contact h3 {
+    font-size: 24px !important;
+  }
+  
+  #contact .font-mono {
+    font-size: calc(0.875rem + 2px) !important;
+  }
+  
+  #contact p:not(.font-mono),
+  #contact a:not(.font-mono) {
+    font-size: calc(1rem + 2px) !important;
   }
 
   [data-scroll-container] {
