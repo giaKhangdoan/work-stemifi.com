@@ -17,7 +17,7 @@
       "tags": ["STEM", "Thực hành", "Blockly", "Micro:bit", "3D Printing"],
       "date": "",
       "schedule": [
-        { "time": "08:00 – 08:15", "activity": "Khởi động & Giới thiệu" },
+        { "time": "08:00 – 08:15", "activity": "Check-in - Khởi động & Giới thiệu" },
         { "time": "08:15 – 09:00", "activity": "Làm quen Blockly & Micro:bit (MakeCode)" },
         { "time": "09:00 – 09:45", "activity": "Kết nối Micro:bit với mô hình thực (LED/Servo/Sensor)" },
         { "time": "09:45 – 10:30", "activity": "Thiết kế & In 3D linh kiện (Tinkercad → STL → Slicer)" },
