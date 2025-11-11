@@ -18,11 +18,11 @@
       "date": "",
       "schedule": [
         { "time": "08:00 – 08:15", "activity": "Check-in - Khởi động & Giới thiệu" },
-        { "time": "08:15 – 09:00", "activity": "Làm quen Blockly & Micro:bit (MakeCode)" },
-        { "time": "09:00 – 09:45", "activity": "Kết nối Micro:bit với mô hình thực (LED/Servo/Sensor)" },
-        { "time": "09:45 – 10:30", "activity": "Thiết kế & In 3D linh kiện (Tinkercad → STL → Slicer)" },
-        { "time": "10:30 – 10:55", "activity": "Trình diễn & Chia sẻ kết quả nhóm" },
-        { "time": "10:55 – 11:00", "activity": "Tổng kết & Lưu niệm" }
+        { "time": "08:15 – 8:30", "activity": "Khai mạc chương trình" },
+        { "time": "08:30 – 09:15", "activity": "Giới thiệu CyberPi và nền tảng lập trình kéo-thả Blockly (MakeBlock)" },
+        { "time": "09:15 – 10:00", "activity": "Giới thiệu Robot giáo dục mBot" },
+        { "time": "10:30 – 10:45", "activity": "Trình diễn & Chia sẻ kết quả nhóm" },
+        { "time": "10:45 – 11:15", "activity": "Tổng kết & Lưu niệm" }
       ],
       "location": "22 Đ. T2, Vinhomes Grand Park, Thủ Đức, Thành phố Hồ Chí",
       "banner": "/workshop-1-banner.jpg",
