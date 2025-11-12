@@ -263,9 +263,10 @@ export default function Home() {
                 <a
                   key={item.id}
                   href={item.id}
-                  className="font-sans text-sm font-normal text-white md:text-base"
+                  className="group relative font-sans text-sm font-normal text-white transition-colors hover:text-[#00FFE8] md:text-base"
                 >
                   {item.label}
+                  <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-[#00FFE8] transition-all duration-300 group-hover:w-full" />
                 </a>
               )
             }
@@ -273,9 +274,10 @@ export default function Home() {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="font-sans text-sm font-normal text-white md:text-base"
+                className="group relative font-sans text-sm font-normal text-white transition-colors hover:text-[#00FFE8] md:text-base"
               >
                 {item.label}
+                <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-[#00FFE8] transition-all duration-300 group-hover:w-full" />
               </button>
             )
           })}
