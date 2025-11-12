@@ -242,7 +242,7 @@ export default function Home() {
         {/* Logo centered */}
         <button
           onClick={() => scrollToSection("hero")}
-          className="transition-transform hover:scale-105"
+          className="cursor-pointer transition-transform hover:scale-105"
         >
           <img
             src="/stemifi-logo.png"
@@ -263,7 +263,7 @@ export default function Home() {
                 <a
                   key={item.id}
                   href={item.id}
-                  className="group relative font-sans text-sm font-normal text-white transition-colors hover:text-[#00FFE8] md:text-base"
+                  className="group relative cursor-pointer font-sans text-sm font-normal text-white transition-colors hover:text-[#00FFE8] md:text-base"
                 >
                   {item.label}
                   <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-[#00FFE8] transition-all duration-300 group-hover:w-full" />
@@ -274,7 +274,7 @@ export default function Home() {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="group relative font-sans text-sm font-normal text-white transition-colors hover:text-[#00FFE8] md:text-base"
+                className="group relative cursor-pointer font-sans text-sm font-normal text-white transition-colors hover:text-[#00FFE8] md:text-base"
               >
                 {item.label}
                 <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-[#00FFE8] transition-all duration-300 group-hover:w-full" />
@@ -285,7 +285,7 @@ export default function Home() {
           {/* CTA Đăng ký nổi bật */}
           <button
             onClick={() => scrollToSection("register")}
-            className="relative rounded-full bg-gradient-to-r from-[#00FFE8] to-[#1800AD] px-4 py-2 font-sans text-sm font-medium text-white shadow-[0_8px_24px_rgba(24,0,173,0.35)] outline-none transition-all hover:brightness-110 focus-visible:ring-4 focus-visible:ring-[#00FFE8]/40 md:px-6 md:text-base"
+            className="relative cursor-pointer rounded-full bg-gradient-to-r from-[#00FFE8] to-[#1800AD] px-4 py-2 font-sans text-sm font-medium text-white shadow-[0_8px_24px_rgba(24,0,173,0.35)] outline-none transition-all hover:brightness-110 focus-visible:ring-4 focus-visible:ring-[#00FFE8]/40 md:px-6 md:text-base"
           >
             Đăng ký
             <span className="pointer-events-none absolute inset-0 rounded-full ring-2 ring-white/10" />

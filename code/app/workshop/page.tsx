@@ -119,7 +119,7 @@ export default function WorkshopPage() {
         }`}
       >
         {/* Logo centered */}
-        <button onClick={() => scrollToSection("hero")} className="transition-transform hover:scale-105">
+        <button onClick={() => scrollToSection("hero")} className="cursor-pointer transition-transform hover:scale-105">
           <img src="/stemifi-logo.png" alt="STEMIFI MAKERS" className="h-18 w-auto object-contain md:h-24" />
         </button>
 
@@ -132,7 +132,7 @@ export default function WorkshopPage() {
           ].map((item) => {
             if ((item as any).type === "link") {
               return (
-                <a key={(item as any).id} href={(item as any).id} className="group relative font-sans text-sm font-semibold text-[#56C4C3] transition-colors hover:text-[#375AA9] md:text-base">
+                <a key={(item as any).id} href={(item as any).id} className="group relative cursor-pointer font-sans text-sm font-semibold text-[#56C4C3] transition-colors hover:text-[#375AA9] md:text-base">
                   {(item as any).label}
                   <span className="absolute -bottom-1 left-0 h-px w-0 bg-[#56C4C3] transition-all duration-300 group-hover:w-full" />
                 </a>
@@ -142,7 +142,7 @@ export default function WorkshopPage() {
               <button
                 key={(item as any).id}
                 onClick={() => scrollToSection((item as any).id)}
-                className="group relative font-sans text-sm font-semibold text-[#56C4C3] transition-colors hover:text-[#375AA9] md:text-base"
+                className="group relative cursor-pointer font-sans text-sm font-semibold text-[#56C4C3] transition-colors hover:text-[#375AA9] md:text-base"
               >
                 {(item as any).label}
                 <span className="absolute -bottom-1 left-0 h-px w-0 bg-[#56C4C3] transition-all duration-300 group-hover:w-full" />
@@ -152,7 +152,7 @@ export default function WorkshopPage() {
 
           <button
             onClick={() => scrollToSection("register")}
-            className="relative rounded-full bg-gradient-to-r from-[#56C4C3] to-[#375AA9] px-4 py-2 font-sans text-sm font-bold text-white shadow-[0_8px_24px_rgba(55,90,169,0.35)] outline-none transition-all hover:brightness-110 focus-visible:ring-4 focus-visible:ring-[#56C4C3]/40 md:px-6 md:text-base"
+            className="relative cursor-pointer rounded-full bg-gradient-to-r from-[#56C4C3] to-[#375AA9] px-4 py-2 font-sans text-sm font-bold text-white shadow-[0_8px_24px_rgba(55,90,169,0.35)] outline-none transition-all hover:brightness-110 focus-visible:ring-4 focus-visible:ring-[#56C4C3]/40 md:px-6 md:text-base"
           >
             Đăng ký
             <span className="pointer-events-none absolute inset-0 rounded-full ring-2 ring-white/10" />
