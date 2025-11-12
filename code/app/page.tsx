@@ -708,7 +708,7 @@ export default function Home() {
                       <p className="font-mono text-white mb-1 font-medium" style={{ fontSize: 'calc(0.875rem + 2px)' }}>Địa chỉ</p>
                       <p className="text-white font-normal break-words" style={{ fontSize: 'clamp(0.875rem, 3vw, 1.125rem)' }}>{contactInfo.address}</p>
                     </div>
-
+                    
                     <div>
                       <p className="font-mono text-white mb-1 font-medium" style={{ fontSize: 'calc(0.875rem + 2px)' }}>Hotline</p>
                       <a href={`tel:${contactInfo.hotline}`} className="text-white font-medium hover:text-[#00FFE8] transition-colors" style={{ fontSize: 'calc(1rem + 2px)' }}>
