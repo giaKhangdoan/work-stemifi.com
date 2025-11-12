@@ -241,7 +241,21 @@ export default function Home() {
         }`}
       >
         {/* Logo và Hamburger Row - Mobile */}
-        <div className="flex w-full items-center justify-between md:hidden">
+        <div className="relative flex w-full items-center justify-center md:hidden">
+          {/* Hamburger Button - bên phải */}
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="absolute right-0 cursor-pointer p-2 rounded-full bg-white/20 backdrop-blur-md transition-all hover:bg-white/30"
+            aria-label="Toggle menu"
+          >
+            {isMobileMenuOpen ? (
+              <X className="w-6 h-6 text-white" />
+            ) : (
+              <Menu className="w-6 h-6 text-white" />
+            )}
+          </button>
+          
+          {/* Logo ở giữa */}
           <button
             onClick={() => scrollToSection("hero")}
             className="cursor-pointer transition-transform hover:scale-105"
@@ -251,19 +265,6 @@ export default function Home() {
               alt="STEMIFI MAKERS"
               className="h-12 w-auto object-contain sm:h-14"
             />
-          </button>
-          
-          {/* Hamburger Button - chỉ hiện trên mobile */}
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="cursor-pointer p-2 rounded-full bg-white/20 backdrop-blur-md transition-all hover:bg-white/30"
-            aria-label="Toggle menu"
-          >
-            {isMobileMenuOpen ? (
-              <X className="w-6 h-6 text-white" />
-            ) : (
-              <Menu className="w-6 h-6 text-white" />
-            )}
           </button>
         </div>
 
@@ -373,10 +374,35 @@ export default function Home() {
         {/* General info under taskbar, above hero */}
         <section className="relative z-20 w-full px-3 md:px-6 pt-4 md:pt-6">
           <div className="flex w-full items-center justify-center">
-            <div className="w-full max-w-6xl rounded-2xl border border-foreground/10 bg-foreground/30 px-4 py-3 text-center backdrop-blur md:px-6 md:py-4 shadow-[0_10px_30px_rgba(0,0,0,0.2)]">
-              <p className="font-sans text-base font-normal uppercase tracking-widest text-white md:text-lg">{generalInfo.title}</p>
-              <p className="mt-2 font-sans text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium leading-tight text-white md:mt-3 break-words">{generalInfo.subtitle}</p>
-              <p className="mt-1.5 font-sans text-base text-white md:text-lg md:mt-2">{generalInfo.note}</p>
+            <div className="group relative w-full max-w-6xl overflow-hidden rounded-3xl border border-white/20 bg-gradient-to-br from-white/20 via-white/15 to-white/10 px-5 py-4 text-center backdrop-blur-xl md:px-8 md:py-6 shadow-[0_20px_60px_rgba(0,0,0,0.3),0_0_40px_rgba(0,255,232,0.1)] transition-all duration-500 hover:shadow-[0_25px_80px_rgba(0,0,0,0.4),0_0_60px_rgba(0,255,232,0.15)] hover:border-white/30">
+              {/* Animated gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-br from-[#00FFE8]/10 via-transparent to-[#1800AD]/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+              
+              {/* Decorative glow effects */}
+              <div className="absolute -right-20 -top-20 h-40 w-40 rounded-full bg-gradient-to-br from-[#00FFE8]/20 to-[#00C8FF]/20 blur-3xl opacity-50 transition-all duration-700 group-hover:scale-150 group-hover:opacity-70" />
+              <div className="absolute -left-20 -bottom-20 h-40 w-40 rounded-full bg-gradient-to-br from-[#1800AD]/20 to-[#375AA9]/20 blur-3xl opacity-50 transition-all duration-700 group-hover:scale-150 group-hover:opacity-70" />
+              
+              {/* Content */}
+              <div className="relative z-10 flex flex-col items-center">
+                {/* Logo ở giữa */}
+                {/* <div className="mb-4 md:mb-6 flex items-center justify-center">
+                  <img
+                    src="/stemifi-logo.png"
+                    alt="STEMIFI MAKERS"
+                    className="h-16 w-auto object-contain drop-shadow-[0_4px_20px_rgba(0,0,0,0.5)] transition-transform duration-300 group-hover:scale-105 sm:h-20 md:h-24 lg:h-28"
+                  />
+                </div> */}
+                
+                <p className="font-sans text-sm font-semibold uppercase tracking-[0.2em] text-[#00FFE8] drop-shadow-[0_0_8px_rgba(0,255,232,0.5)] md:text-base">
+                  {generalInfo.title}
+                </p>
+                <p className="mt-3 font-sans text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-tight text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.5)] md:mt-4 break-words">
+                  {generalInfo.subtitle}
+                </p>
+                <p className="mt-3 font-sans text-sm sm:text-base md:text-lg font-normal leading-relaxed text-white/90 md:mt-4 max-w-2xl mx-auto">
+                  {generalInfo.note}
+                </p>
+              </div>
             </div>
           </div>
         </section>

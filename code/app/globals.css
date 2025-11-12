@@ -238,6 +238,35 @@
       max-width: 100%;
       height: auto;
     }
+    
+    /* Prevent orphan words (mồ côi chữ) on mobile */
+    p, span, div, h1, h2, h3, h4, h5, h6 {
+      /* Use text-wrap: balance if supported (Chrome 114+) */
+      text-wrap: balance;
+      /* Fallback for older browsers */
+      orphans: 2;
+      widows: 2;
+    }
+    
+    /* Better text wrapping for Vietnamese text */
+    p, span, div, li {
+      word-break: break-word;
+      overflow-wrap: break-word;
+      /* Prevent single word on last line */
+      word-spacing: 0.1em;
+    }
+    
+    /* Specific adjustments for paragraphs */
+    p {
+      line-height: 1.6;
+      /* Ensure at least 2 words on last line when possible */
+      min-height: 2em;
+    }
+    
+    /* For description text in cards */
+    .text-base, .text-lg {
+      line-height: 1.7;
+    }
   }
 
   /* Touch-friendly tap targets on mobile */
