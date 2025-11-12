@@ -14,6 +14,12 @@ export const metadata: Metadata = {
   title: "Workshop STEMIFI",
   description: "Weekly workshops with beautiful design and 3D effects",
   generator: "v0.app",
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 5,
+    userScalable: true,
+  },
   icons: {
     icon: "/stemifi-logo.png",
     shortcut: "/stemifi-logo.png",

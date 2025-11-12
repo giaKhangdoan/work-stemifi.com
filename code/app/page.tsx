@@ -5,7 +5,7 @@ import { CustomCursor } from "@/components/custom-cursor"
 import { GrainOverlay } from "@/components/grain-overlay"
 import { MagneticButton } from "@/components/magnetic-button"
 import { useRef, useEffect, useState } from "react"
-import { Clock, MapPin, Phone, Mail, Globe } from "lucide-react"
+import { Clock, MapPin, Phone, Mail, Globe, Menu, X } from "lucide-react"
 import {
   getCurrentWeek,
   getCurrentWeekSaturday,
@@ -26,6 +26,7 @@ export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false)
   const [currentWorkshop, setCurrentWorkshop] = useState<Workshop | null>(null)
   const [saturdayDate, setSaturdayDate] = useState<string>("")
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const shaderContainerRef = useRef<HTMLDivElement>(null)
   
   // Lấy thông tin liên hệ từ JSON
@@ -235,24 +236,51 @@ export default function Home() {
 
       {/* Header Navigation */}
       <nav
-        className={`sticky top-0 left-0 right-0 z-50 flex flex-col items-center gap-3 px-6 py-4 transition-opacity duration-700 md:px-12 ${
+        className={`sticky top-0 left-0 right-0 z-50 flex flex-col items-center gap-2 sm:gap-3 px-3 py-3 sm:px-4 sm:py-4 md:px-6 md:py-4 transition-opacity duration-700 md:px-12 ${
           isLoaded ? "opacity-100" : "opacity-0"
         }`}
       >
-        {/* Logo centered */}
+        {/* Logo và Hamburger Row - Mobile */}
+        <div className="flex w-full items-center justify-between md:hidden">
+          <button
+            onClick={() => scrollToSection("hero")}
+            className="cursor-pointer transition-transform hover:scale-105"
+          >
+            <img
+              src="/stemifi-logo.png"
+              alt="STEMIFI MAKERS"
+              className="h-12 w-auto object-contain sm:h-14"
+            />
+          </button>
+          
+          {/* Hamburger Button - chỉ hiện trên mobile */}
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="cursor-pointer p-2 rounded-full bg-white/20 backdrop-blur-md transition-all hover:bg-white/30"
+            aria-label="Toggle menu"
+          >
+            {isMobileMenuOpen ? (
+              <X className="w-6 h-6 text-white" />
+            ) : (
+              <Menu className="w-6 h-6 text-white" />
+            )}
+          </button>
+        </div>
+
+        {/* Logo centered - Desktop */}
         <button
           onClick={() => scrollToSection("hero")}
-          className="cursor-pointer transition-transform hover:scale-105"
+          className="hidden md:block cursor-pointer transition-transform hover:scale-105"
         >
           <img
             src="/stemifi-logo.png"
             alt="STEMIFI MAKERS"
-            className="h-[64.8px] w-auto object-contain md:h-[86.4px]"
+            className="h-[64.8px] w-auto object-contain lg:h-[86.4px]"
           />
         </button>
 
-        {/* Menu under logo */}
-        <div className="flex items-center gap-6 rounded-full bg-white/20 px-4 py-2 backdrop-blur-md md:gap-8">
+        {/* Desktop Menu - ẩn trên mobile */}
+        <div className="hidden md:flex items-center gap-2 sm:gap-4 md:gap-6 rounded-full bg-white/20 px-2 py-1.5 sm:px-3 sm:py-2 md:px-4 md:py-2 backdrop-blur-md">
           {[
             { label: "Giới thiệu", id: "about", type: "section" },
             { label: "Nội dung", id: "content", type: "section" },
@@ -263,7 +291,7 @@ export default function Home() {
                 <a
                   key={item.id}
                   href={item.id}
-                  className="group relative cursor-pointer font-sans text-sm font-normal text-white transition-colors hover:text-[#00FFE8] md:text-base"
+                  className="group relative cursor-pointer font-sans text-xs sm:text-sm font-normal text-white transition-colors hover:text-[#00FFE8] md:text-base whitespace-nowrap"
                 >
                   {item.label}
                   <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-[#00FFE8] transition-all duration-300 group-hover:w-full" />
@@ -274,7 +302,7 @@ export default function Home() {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="group relative cursor-pointer font-sans text-sm font-normal text-white transition-colors hover:text-[#00FFE8] md:text-base"
+                className="group relative cursor-pointer font-sans text-xs sm:text-sm font-normal text-white transition-colors hover:text-[#00FFE8] md:text-base whitespace-nowrap"
               >
                 {item.label}
                 <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-[#00FFE8] transition-all duration-300 group-hover:w-full" />
@@ -285,12 +313,59 @@ export default function Home() {
           {/* CTA Đăng ký nổi bật */}
           <button
             onClick={() => scrollToSection("register")}
-            className="relative cursor-pointer rounded-full bg-gradient-to-r from-[#00FFE8] to-[#1800AD] px-4 py-2 font-sans text-sm font-medium text-white shadow-[0_8px_24px_rgba(24,0,173,0.35)] outline-none transition-all hover:brightness-110 focus-visible:ring-4 focus-visible:ring-[#00FFE8]/40 md:px-6 md:text-base"
+            className="relative cursor-pointer rounded-full bg-gradient-to-r from-[#00FFE8] to-[#1800AD] px-3 py-1.5 sm:px-4 sm:py-2 font-sans text-xs sm:text-sm font-medium text-white shadow-[0_8px_24px_rgba(24,0,173,0.35)] outline-none transition-all hover:brightness-110 focus-visible:ring-4 focus-visible:ring-[#00FFE8]/40 md:px-6 md:text-base"
           >
             Đăng ký
             <span className="pointer-events-none absolute inset-0 rounded-full ring-2 ring-white/10" />
           </button>
         </div>
+
+        {/* Mobile Dropdown Menu */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden w-full mt-2 rounded-2xl bg-white/20 backdrop-blur-md border border-white/30 overflow-hidden animate-in slide-in-from-top-2 duration-200">
+            <div className="flex flex-col p-2 gap-1">
+              {[
+                { label: "Giới thiệu", id: "about", type: "section" },
+                { label: "Nội dung", id: "content", type: "section" },
+                { label: "Tất cả Workshop", id: "/workshops", type: "link" },
+              ].map((item) => {
+                if (item.type === "link") {
+                  return (
+                    <a
+                      key={item.id}
+                      href={item.id}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="group relative cursor-pointer font-sans text-sm font-normal text-white transition-colors hover:text-[#00FFE8] hover:bg-white/10 px-4 py-3 rounded-xl"
+                    >
+                      {item.label}
+                    </a>
+                  )
+                }
+                return (
+                  <button
+                    key={item.id}
+                    onClick={() => {
+                      scrollToSection(item.id)
+                      setIsMobileMenuOpen(false)
+                    }}
+                    className="group relative cursor-pointer font-sans text-sm font-normal text-white transition-colors hover:text-[#00FFE8] hover:bg-white/10 px-4 py-3 rounded-xl text-left"
+                  >
+                    {item.label}
+                  </button>
+                )
+              })}
+              <button
+                onClick={() => {
+                  scrollToSection("register")
+                  setIsMobileMenuOpen(false)
+                }}
+                className="relative cursor-pointer rounded-xl bg-gradient-to-r from-[#00FFE8] to-[#1800AD] px-4 py-3 font-sans text-sm font-medium text-white shadow-[0_8px_24px_rgba(24,0,173,0.35)] outline-none transition-all hover:brightness-110 mt-2"
+              >
+                Đăng ký
+              </button>
+            </div>
+          </div>
+        )}
       </nav>
 
       {/* Main Content */}
@@ -300,7 +375,7 @@ export default function Home() {
           <div className="flex w-full items-center justify-center">
             <div className="w-full max-w-6xl rounded-2xl border border-foreground/10 bg-foreground/30 px-4 py-3 text-center backdrop-blur md:px-6 md:py-4 shadow-[0_10px_30px_rgba(0,0,0,0.2)]">
               <p className="font-sans text-base font-normal uppercase tracking-widest text-white md:text-lg">{generalInfo.title}</p>
-              <p className="mt-2 font-sans text-2xl font-medium leading-tight text-white md:text-3xl md:mt-3 whitespace-nowrap">{generalInfo.subtitle}</p>
+              <p className="mt-2 font-sans text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium leading-tight text-white md:mt-3 break-words">{generalInfo.subtitle}</p>
               <p className="mt-1.5 font-sans text-base text-white md:text-lg md:mt-2">{generalInfo.note}</p>
             </div>
           </div>
@@ -324,9 +399,9 @@ export default function Home() {
 
                   {/* Title with Gradient Glow */}
                   <div className="mb-2 relative">
-                    <h1 className="mb-1 font-sans text-2xl font-medium text-black md:text-4xl lg:text-5xl md:mb-1.5">
+                    <h1 className="mb-1 font-sans text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-medium text-black md:mb-1.5 break-words">
                       <span className="text-black">STEMIFI</span>
-                      <span className="text-black ml-2 md:ml-3">MAKERS</span>
+                      <span className="text-black ml-1 sm:ml-2 md:ml-3">MAKERS</span>
                       <br />
                       <span className="text-black">WORKSHOP</span>
                     </h1>
@@ -469,13 +544,13 @@ export default function Home() {
         {/* Workshop Content Section */}
         <section id="content" className="flex min-h-0 w-full items-center px-4 py-4 md:min-h-screen md:px-12 md:py-8">
           <div className="mx-auto w-full max-w-5xl">
-            <h2 className="mb-3 text-center font-sans text-3xl font-medium text-white md:text-5xl lg:text-6xl md:mb-4 leading-tight" style={{ paddingTop: '0.15em', paddingBottom: '0.15em' }}>
+            <h2 className="mb-3 text-center font-sans text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-medium text-white md:text-5xl lg:text-6xl md:mb-4 leading-tight break-words" style={{ paddingTop: '0.15em', paddingBottom: '0.15em' }}>
               {currentWorkshop?.title ? (
                 currentWorkshop.title.includes("LẬP TRÌNH BLOCKLY & MICRO:BIT") ? (
                   <>
-                    <span className="whitespace-nowrap">LẬP TRÌNH BLOCKLY & MICRO:BIT</span>
-                    <br />
-                    ỨNG DỤNG VỚI MÁY IN 3D
+                    <span className="break-words">LẬP TRÌNH BLOCKLY & MICRO:BIT</span>
+                    <br className="hidden sm:block" />
+                    <span className="break-words">ỨNG DỤNG VỚI MÁY IN 3D</span>
                   </>
                 ) : (
                   currentWorkshop.title
@@ -605,7 +680,7 @@ export default function Home() {
                   <div className="space-y-2 md:space-y-2.5">
                     <div>
                       <p className="font-mono text-white mb-1 font-medium" style={{ fontSize: 'calc(0.875rem + 2px)' }}>Địa chỉ</p>
-                      <p className="text-white font-normal" style={{ fontSize: 'calc(1rem + 2px)', whiteSpace: 'nowrap' }}>{contactInfo.address}</p>
+                      <p className="text-white font-normal break-words" style={{ fontSize: 'clamp(0.875rem, 3vw, 1.125rem)' }}>{contactInfo.address}</p>
                     </div>
 
                     <div>

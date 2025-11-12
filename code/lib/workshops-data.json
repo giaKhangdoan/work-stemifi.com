@@ -17,7 +17,7 @@
       "tags": ["STEM", "Thực hành", "Blockly", "Micro:bit", "3D Printing"],
       "date": "",
       "schedule": [
-        { "time": "08:00 – 08:15", "activity": "Check-in - Khởi động & Giới thiệu" },
+        { "time": "08:00 – 08:15", "activity": "Khởi động & Giới thiệu" },
         { "time": "08:15 – 8:30", "activity": "Khai mạc chương trình" },
         { "time": "08:30 – 09:15", "activity": "Giới thiệu CyberPi và nền tảng lập trình kéo-thả Blockly (MakeBlock)" },
         { "time": "09:15 – 10:00", "activity": "Giới thiệu Robot giáo dục mBot" },

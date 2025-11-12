@@ -209,6 +209,44 @@
     transform: translateZ(0);
     backface-visibility: hidden;
   }
+
+  /* Prevent horizontal scroll on mobile */
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+  }
+
+  /* Ensure all containers respect viewport width */
+  * {
+    box-sizing: border-box;
+  }
+
+  /* Improve text rendering on mobile */
+  @media (max-width: 768px) {
+    html {
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+    }
+    
+    body {
+      font-size: clamp(14px, 4vw, 16px);
+    }
+    
+    /* Prevent images from overflowing */
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  /* Touch-friendly tap targets on mobile */
+  @media (max-width: 768px) {
+    button, a {
+      min-height: 44px;
+      min-width: 44px;
+    }
+  }
 }
 
 @layer components {
