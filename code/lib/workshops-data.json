@@ -2,7 +2,7 @@
   "workshops": [
     {
       "id": 1,
-      "title": "LẬP TRÌNH BLOCKLY & MICRO:BIT – ỨNG DỤNG VỚI MÁY IN 3D",
+      "title": "LẬP TRÌNH BLOCKLY & ROBOT GIÁO DỤC MBOT",
       "description": "Học sinh làm quen Blockly (MakeCode), lập trình Micro:bit điều khiển mô hình thực, hiểu quy trình thiết kế & in chi tiết 3D và trải nghiệm trọn vẹn chu trình STEM từ ý tưởng → lập trình → tạo hình → sản phẩm.",
       "week": 1,
       "day": "Saturday",

@@ -570,21 +570,21 @@ export default function Home() {
         {/* Workshop Content Section */}
         <section id="content" className="flex min-h-0 w-full items-center px-4 py-4 md:min-h-screen md:px-12 md:py-8">
           <div className="mx-auto w-full max-w-5xl">
-            <h2 className="mb-3 text-center font-sans text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-medium text-white md:text-5xl lg:text-6xl md:mb-4 leading-tight break-words" style={{ paddingTop: '0.15em', paddingBottom: '0.15em' }}>
-              {currentWorkshop?.title ? (
-                currentWorkshop.title.includes("LẬP TRÌNH BLOCKLY & MICRO:BIT") ? (
-                  <>
-                    <span className="break-words">LẬP TRÌNH BLOCKLY & MICRO:BIT</span>
-                    <br className="hidden sm:block" />
-                    <span className="break-words">ỨNG DỤNG VỚI MÁY IN 3D</span>
-                  </>
+              <h2 className="mb-3 text-center font-sans text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-medium text-white md:text-5xl lg:text-6xl md:mb-4 leading-tight break-words" style={{ paddingTop: '0.15em', paddingBottom: '0.15em' }}>
+                {currentWorkshop?.title ? (
+                  currentWorkshop.title.includes("LẬP TRÌNH BLOCKLY & ROBOT GIÁO DỤC MBOT") ? (
+                    <>
+                      <span className="break-words">LẬP TRÌNH BLOCKLY &</span>
+                      <br className="hidden sm:block" />
+                      <span className="break-words">ROBOT GIÁO DỤC MBOT</span>
+                    </>
+                  ) : (
+                    currentWorkshop.title
+                  )
                 ) : (
-                  currentWorkshop.title
-                )
-              ) : (
-                "Workshop"
-              )}
-            </h2>
+                  "Workshop"
+                )}
+              </h2>
 
             <div className="rounded-3xl border border-foreground/10 bg-foreground/25 backdrop-blur-xl px-4 py-3 md:px-6 md:py-4">
               <div className="space-y-3 md:space-y-4">
